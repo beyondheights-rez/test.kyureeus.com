@@ -1,0 +1,44 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono, Bebas_Neue } from "next/font/google";
+import { sfProDisplay } from "./fonts";
+import "./globals.css";
+
+import { Header } from "@/components/common/header";
+import { Footer } from "@/components/common/footer";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  variable: "--font-bebas-neue",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Kyureeus - A Rezilyens Company",
+  description: "Kyureeus website with a premium modern design, interactive bootcamps, and educational programs.",
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} ${sfProDisplay.variable} ${bebasNeue.variable} h-full antialiased`}
+    >
+      <head />
+      <body className="min-h-full flex flex-col bg-[#F5F2EB]">
+        <Header />
+        <main className="flex-1 flex flex-col">{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
