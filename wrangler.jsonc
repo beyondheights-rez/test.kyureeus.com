@@ -1,5 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
+  "account_id": "a929e37640ac56709b9fdfcc72ffcffa",
   "main": ".open-next/worker.js",
   "name": "kyureeus-website",
   "compatibility_date": "2026-08-13",
