@@ -2,7 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "account_id": "a929e37640ac56709b9fdfcc72ffcffa",
   "main": ".open-next/worker.js",
-  "name": "test-kyureeus-com",
+  "name": "kyureeus-testing",
   "compatibility_date": "2026-08-13",
   "compatibility_flags": [
     "global_fetch_strictly_public"
@@ -14,7 +14,7 @@
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "test-kyureeus-com"
+      "service": "kyureeus-testing"
     }
   ],
   "images": {
