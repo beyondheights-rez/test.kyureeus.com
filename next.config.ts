@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
   allowedDevOrigins: [
     "192.168.2.32",
     "192.168.2.*",
@@ -28,5 +27,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-
-import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());
