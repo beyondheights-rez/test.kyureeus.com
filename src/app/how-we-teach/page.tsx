@@ -42,7 +42,7 @@ export default function HowWeTeachPage() {
   return (
     <div className="flex flex-col flex-1 bg-[#F5F2EB] text-[#121212] min-h-screen">
       {/* 1. Main Hero Section */}
-      <section className="sticky top-0 h-screen z-10 flex items-center justify-center px-6 py-12 md:px-12 lg:px-20 bg-[#F5F2EB] text-[#121212] overflow-hidden">
+      <section className="sticky top-0 min-h-[calc(100vh-80px)] z-10 flex items-center justify-center px-6 py-10 sm:py-12 md:px-12 lg:px-20 bg-[#F5F2EB] text-[#121212] overflow-hidden">
         <div className="mx-auto max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
@@ -98,6 +98,9 @@ export default function HowWeTeachPage() {
                 <img 
                   src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/KyureeusFlyWheel/how%20we%20teach.png" 
                   alt="How We Teach Flywheel" 
+                  loading="eager"
+                  decoding="async"
+                  crossOrigin="anonymous"
                   className="w-full h-auto object-contain drop-shadow-md hover:scale-[1.03] transition-transform duration-300 scale-105"
                 />
               </div>

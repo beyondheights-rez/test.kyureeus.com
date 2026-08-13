@@ -25,7 +25,14 @@ const bebasNeue = Bebas_Neue({
 export const metadata: Metadata = {
   title: "Kyureeus - A Rezilyens Company",
   description: "Kyureeus website with a premium modern design, interactive bootcamps, and educational programs.",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/apple-icon.png",
+  },
 };
+
+import { MotionProvider } from "@/components/common/motion-provider";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -35,9 +42,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <head />
       <body className="min-h-full flex flex-col bg-[#F5F2EB]">
-        <Header />
-        <main className="flex-1 flex flex-col">{children}</main>
-        <Footer />
+        <MotionProvider>
+          <Header />
+          <main className="flex-1 flex flex-col">{children}</main>
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

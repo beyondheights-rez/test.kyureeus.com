@@ -34,9 +34,9 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-1 bg-[#F5F2EB] text-[#121212]">
       {/* 1. Home Page - Hero Section (Sticky underneath) */}
-      <section className="sticky top-0 h-screen z-10 flex items-center justify-center px-6 py-12 md:px-12 lg:px-20 bg-[#F5F2EB] text-[#121212] overflow-hidden">
+      <section className="sticky top-0 min-h-[calc(100vh-80px)] z-10 flex items-center justify-center px-6 py-10 sm:py-12 md:px-12 lg:px-20 bg-[#F5F2EB] text-[#121212] overflow-hidden">
         <div className="mx-auto max-w-7xl w-full">
-          <div className="grid grid-cols-1 gap-12 items-center lg:grid-cols-12 lg:gap-16">
+          <div className="grid grid-cols-1 gap-8 items-center lg:grid-cols-12 lg:gap-16">
             
             {/* Left Column: Typography & Text */}
             <div className="flex flex-col items-start lg:col-span-6 space-y-6 md:space-y-8">
@@ -82,6 +82,9 @@ export default function Home() {
                 <img 
                   src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/KyureeusFlyWheel/Homepage%20Flywheel.png" 
                   alt="Kyureeus Homepage Flywheel" 
+                  loading="eager"
+                  decoding="async"
+                  crossOrigin="anonymous"
                   className="w-full h-auto object-contain drop-shadow-md hover:scale-[1.03] transition-transform duration-300 scale-105"
                 />
               </div>

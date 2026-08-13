@@ -30,7 +30,7 @@ export default function AboutUsPage() {
     <div className="flex flex-col flex-1 min-h-screen bg-[#F5F2EB] text-[#1C1C1C]">
       
       {/* SECTION 01: About Us Hero Layout (Warm Cream Left / Boardroom Image + Floating Mission Card Right) */}
-      <section className="sticky top-0 h-screen z-10 flex items-center justify-center px-6 py-12 md:px-12 lg:px-20 bg-[#F5F2EB] text-[#121212] overflow-hidden">
+      <section className="sticky top-0 min-h-[calc(100vh-80px)] z-10 flex items-center justify-center px-6 py-10 sm:py-12 md:px-12 lg:px-20 bg-[#F5F2EB] text-[#121212] overflow-hidden">
         <div className="mx-auto max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
@@ -82,6 +82,9 @@ export default function AboutUsPage() {
               <img 
                 src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/KyureeusFlyWheel/photo2.jpg" 
                 alt="Kyureeus Executive Boardroom" 
+                loading="eager"
+                decoding="async"
+                crossOrigin="anonymous"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
             </div>
@@ -254,6 +257,9 @@ export default function AboutUsPage() {
                 <img 
                   src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/KyureeusFlyWheel/About%20us%20flywheel.png" 
                   alt="About Us Capability Flywheel" 
+                  loading="lazy"
+                  decoding="async"
+                  crossOrigin="anonymous"
                   className="w-full h-auto object-contain drop-shadow-md hover:scale-[1.03] transition-transform duration-300 scale-105"
                 />
               </div>

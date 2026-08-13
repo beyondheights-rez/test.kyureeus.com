@@ -28,7 +28,7 @@ export function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#121212]/15 bg-[#F5F2EB] px-3 sm:px-6 lg:px-8 py-3.5 transition-colors duration-300">
+    <header className="sticky top-0 z-[100] w-full border-b border-[#121212]/15 bg-[#F5F2EB]/95 backdrop-blur-md px-3 sm:px-6 lg:px-8 py-3.5 transition-all duration-300 shadow-xs">
       <div className="mx-auto flex max-w-[1440px] items-center justify-between">
         
         {/* Left Section: Brand Logo (Positioned cleanly on the left with pointer cursor) */}
@@ -44,8 +44,8 @@ export function Header() {
         </Link>
 
         {/* Center Section: Navigation Links */}
-        <nav className="hidden items-center lg:flex px-2">
-          <ul className="flex items-center gap-1 xl:gap-2.5">
+        <nav className="hidden items-center lg:flex px-1 xl:px-2">
+          <ul className="flex items-center gap-0.5 xl:gap-1.5 2xl:gap-2.5">
             {NAV_LINKS.map((link, idx) => {
               const isActive = activeIndex === idx;
 
@@ -54,7 +54,7 @@ export function Header() {
                   <Link
                     href={link.href}
                     className={cn(
-                      "relative block px-2.5 xl:px-3 py-2 font-sans text-[11px] xl:text-[12px] font-extrabold tracking-wider whitespace-nowrap transition-colors duration-200 focus:outline-none select-none cursor-pointer",
+                      "relative block px-1.5 xl:px-2.5 2xl:px-3 py-2 font-sans text-[10px] xl:text-[11.5px] 2xl:text-[12px] font-extrabold tracking-wider whitespace-nowrap transition-colors duration-200 focus:outline-none select-none cursor-pointer",
                       isActive 
                         ? "text-[#CF5A30]" 
                         : "text-[#1C1C1C] hover:text-[#CF5A30]"
@@ -64,7 +64,7 @@ export function Header() {
 
                     {/* Active Underline Line (Fixed static positioning for active page) */}
                     {isActive && (
-                      <span className="absolute bottom-0 left-2.5 right-2.5 h-[2.5px] bg-[#CF5A30] rounded-full" />
+                      <span className="absolute bottom-0 left-1.5 right-1.5 xl:left-2.5 xl:right-2.5 h-[2.5px] bg-[#CF5A30] rounded-full" />
                     )}
                   </Link>
                 </li>

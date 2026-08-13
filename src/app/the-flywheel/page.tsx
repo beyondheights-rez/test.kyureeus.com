@@ -31,7 +31,7 @@ export default function TheFlywheelPage() {
     <div className="flex flex-col flex-1 min-h-screen bg-[#F5F2EB] text-[#1C1C1C]">
       
       {/* SECTION 01: Hero Section (2-Column: Left Copy / Right Circular Flywheel Diagram) */}
-      <section className="sticky top-0 h-screen z-10 flex items-center justify-center px-6 py-12 md:px-12 lg:px-20 bg-[#F5F2EB] text-[#121212] overflow-hidden">
+      <section className="sticky top-0 min-h-[calc(100vh-80px)] z-10 flex items-center justify-center px-6 py-10 sm:py-12 md:px-12 lg:px-20 bg-[#F5F2EB] text-[#121212] overflow-hidden">
         <div className="mx-auto max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
@@ -85,6 +85,9 @@ export default function TheFlywheelPage() {
                 <img 
                   src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/KyureeusFlyWheel/The%20flywheel%20page%20wheel%201.png" 
                   alt="The Flywheel Engine" 
+                  loading="eager"
+                  decoding="async"
+                  crossOrigin="anonymous"
                   className="w-full h-auto object-contain drop-shadow-md hover:scale-[1.03] transition-transform duration-300 scale-105"
                 />
               </div>
@@ -303,6 +306,9 @@ export default function TheFlywheelPage() {
                   <img 
                     src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/KyureeusFlyWheel/diagram-viewport.png" 
                     alt="The Flywheel Turns Diagram" 
+                    loading="lazy"
+                    decoding="async"
+                    crossOrigin="anonymous"
                     className="w-full max-w-[280px] h-auto object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>

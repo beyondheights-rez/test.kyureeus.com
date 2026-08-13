@@ -42,7 +42,7 @@ export default function CapabilityArchitecturePage() {
     <div className="flex flex-col flex-1 min-h-screen bg-[#FFFFFF] text-[#1C1C1C]">
       
       {/* SECTION 01: Hero Two-Column Layout (Cream Left / #0E0E10 Dark Right with 3D Ovals & Quote) */}
-      <section className="sticky top-0 h-screen z-10 grid grid-cols-1 lg:grid-cols-12 bg-[#F5F2EB] text-[#121212] overflow-hidden">
+      <section className="sticky top-0 min-h-[calc(100vh-80px)] z-10 grid grid-cols-1 lg:grid-cols-12 bg-[#F5F2EB] text-[#121212] overflow-hidden">
         
         {/* Left Column: Warm Cream Background (#F5F2EB) */}
         <div className="lg:col-span-6 bg-[#F5F2EB] px-8 sm:px-12 md:px-16 py-16 md:py-24 flex flex-col justify-between">

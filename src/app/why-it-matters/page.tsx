@@ -19,7 +19,7 @@ export default function WhyItMattersPage() {
     <div className="flex flex-col flex-1 bg-[#F5F2EB] text-[#1C1C1C] min-h-screen">
 
       {/* SECTION 01: Hero Section - Three Column Layout */}
-      <section className="sticky top-0 h-screen z-10 flex items-center justify-center px-6 py-12 md:px-12 lg:px-20 bg-[#F5F2EB] text-[#121212] overflow-hidden">
+      <section className="sticky top-0 min-h-[calc(100vh-80px)] z-10 flex items-center justify-center px-6 py-10 sm:py-12 md:px-12 lg:px-20 bg-[#F5F2EB] text-[#121212] overflow-hidden">
         <div className="mx-auto max-w-7xl w-full">
           {/* Top Category Label */}
           <div className="text-xs font-extrabold tracking-widest text-[#CF5A30] uppercase mb-8">
@@ -65,6 +65,9 @@ export default function WhyItMattersPage() {
                 <img 
                   src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/KyureeusFlyWheel/Why%20it%20matters.png" 
                   alt="Why It Matters Flywheel" 
+                  loading="eager"
+                  decoding="async"
+                  crossOrigin="anonymous"
                   className="w-full h-auto object-contain drop-shadow-md hover:scale-[1.05] transition-transform duration-300 scale-125"
                 />
               </div>
@@ -642,7 +645,7 @@ export default function WhyItMattersPage() {
 
           {/* CTA Button */}
           <div className="pt-3">
-            <Link href="/bootcamps">
+            <Link href="/capability-architecture">
               <Button className="group flex items-center gap-2.5 rounded-[4px] bg-[#CF5A30] hover:bg-white text-white hover:text-[#121212] px-8 py-6 text-xs sm:text-sm font-bold tracking-widest uppercase transition-colors duration-300 shadow-lg cursor-pointer">
                 EXPLORE THE CAPABILITY ARCHITECTURE
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

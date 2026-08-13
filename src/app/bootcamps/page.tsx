@@ -29,12 +29,12 @@ export default function BootcampsPage() {
   return (
     <div className="flex flex-col flex-1 bg-[#F5F2EB] text-[#121212] min-h-screen">
       {/* 1. Main Hero Section */}
-      <section className="sticky top-0 h-screen z-10 flex items-center justify-center px-6 py-12 md:px-12 lg:px-20 bg-[#F5F2EB] text-[#121212] overflow-hidden">
+      <section className="sticky top-0 min-h-[calc(100vh-80px)] z-10 flex items-center justify-center px-6 py-10 sm:py-12 md:px-12 lg:px-20 bg-[#F5F2EB] text-[#121212] overflow-hidden">
         <div className="mx-auto max-w-7xl w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
             
             {/* Left Column: Text & Actions */}
-            <div className="flex flex-col items-start lg:col-span-6 space-y-6 md:space-y-8">
+            <div className="flex flex-col items-start lg:col-span-6 space-y-5 md:space-y-6 lg:space-y-8">
               
               {/* Badge/Label */}
               <div className="text-xs font-bold tracking-widest text-[#CF5A30] uppercase">
@@ -42,12 +42,12 @@ export default function BootcampsPage() {
               </div>
 
               {/* 64px Bebas Neue Heading with Coral Highlight */}
-              <h1 className="font-bebas text-4xl sm:text-5xl md:text-[64px] leading-[1.05] tracking-wide text-[#121212] uppercase">
+              <h1 className="font-bebas text-4xl sm:text-5xl md:text-[56px] lg:text-[64px] leading-[1.05] tracking-wide text-[#121212] uppercase">
                 EVERY ENTERPRISE RUNS ON CAPABILITY. <span className="text-[#CF5A30]">EVERY CAPABILITY CAN BE BUILT.</span>
               </h1>
 
               {/* 16px SF Pro Display Sub-content */}
-              <div className="space-y-6 font-sans text-[16px] leading-relaxed text-[#3A3E40]">
+              <div className="space-y-4 font-sans text-[15px] sm:text-[16px] leading-relaxed text-[#3A3E40]">
                 <p>
                   Kyureeus bootcamps are not collections of lectures. They are complete systems for developing the people modern enterprises need.
                 </p>
@@ -73,10 +73,13 @@ export default function BootcampsPage() {
             </div>
 
             {/* Right Column: Workspace Photo */}
-            <div className="lg:col-span-6 relative min-h-[400px] lg:min-h-full overflow-hidden flex items-center justify-center rounded-2xl border border-[#121212]/10 shadow-lg">
+            <div className="lg:col-span-6 relative min-h-[280px] sm:min-h-[360px] lg:min-h-[440px] aspect-[4/3] lg:aspect-auto overflow-hidden flex items-center justify-center rounded-2xl border border-[#121212]/10 shadow-lg">
               <img 
                 src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/KyureeusFlyWheel/photo1.jpg" 
                 alt="Kyureeus Enterprise Bootcamp Workstation" 
+                loading="eager"
+                decoding="async"
+                crossOrigin="anonymous"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
             </div>
