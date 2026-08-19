@@ -93,10 +93,8 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Container wrapper for sections sliding over hero */}
-      <div className="relative z-20 bg-[#F5F2EB]">
         {/* SECTION 02: WHO WE ARE (5-Column Grid Layout on #FFFFFF Clean White Background) */}
-        <section className="relative bg-white py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
+        <section className="sticky top-0 z-20 bg-white py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
         <div className="mx-auto max-w-7xl w-full space-y-12">
           
           {/* Section Header */}
@@ -185,7 +183,7 @@ export default function AboutUsPage() {
 
 
       {/* SECTION 03: OUR STORY (3-Column Layout on #F4EFE6 Warm Beige Background matching Image 2) */}
-      <section className="bg-[#F4EFE6] py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
+      <section className="sticky top-0 z-30 bg-[#F4EFE6] py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
         <div className="mx-auto max-w-7xl w-full space-y-12">
           
           {/* Section Header */}
@@ -255,9 +253,9 @@ export default function AboutUsPage() {
             <div className="lg:col-span-4 flex items-center justify-center py-4">
               <div id="flywheel" className="relative max-w-[420px] w-full flex items-center justify-center">
                 <img 
-                  src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/KyureeusFlyWheel/About%20us%20flywheel.png" 
+                  src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/KyureeusFlyWheelChanged/About%20us%20flywheel.png" 
                   alt="About Us Capability Flywheel" 
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   crossOrigin="anonymous"
                   className="w-full h-auto object-contain drop-shadow-md hover:scale-[1.03] transition-transform duration-300 scale-105"
@@ -322,7 +320,7 @@ export default function AboutUsPage() {
 
 
       {/* SECTION 04: BY THE NUMBERS (5-Column Impact Stats Grid on #FFFFFF Clean White Background) */}
-      <section className="bg-white py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
+      <section className="sticky top-0 z-40 bg-white py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
         <div className="mx-auto max-w-7xl w-full space-y-12">
           
           {/* Section Header */}
@@ -426,7 +424,7 @@ export default function AboutUsPage() {
 
 
       {/* SECTION 05: OUR FOUNDING PRINCIPLES (6-Column Principles Grid on #F5F2EB Warm Cream Background matching Image 2) */}
-      <section className="bg-[#F5F2EB] py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
+      <section className="sticky top-0 z-50 bg-[#F5F2EB] py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
         <div className="mx-auto max-w-7xl w-full space-y-12">
           
           {/* Section Header */}
@@ -528,7 +526,7 @@ export default function AboutUsPage() {
 
 
       {/* SECTION 06: Dark Banner CTA (#121216 Dark Background matching design screenshot) */}
-      <section className="bg-[#121216] text-[#FFFFFF] py-16 md:py-20 px-6 md:px-12 lg:px-20 border-t border-white/10 select-none">
+      <section className="sticky top-0 z-60 bg-[#121216] text-[#FFFFFF] py-16 md:py-20 px-6 md:px-12 lg:px-20 border-t border-white/10 select-none">
         <div className="mx-auto max-w-7xl w-full">
           
           {/* Headline, Sparkle Bullets & Left-Aligned CTA Button */}
@@ -568,7 +566,6 @@ export default function AboutUsPage() {
 
         </div>
       </section>
-      </div>
 
     </div>
   );

@@ -180,10 +180,8 @@ export default function CapabilityArchitecturePage() {
       </section>
 
 
-      {/* Container wrapper for sections sliding over hero */}
-      <div className="relative z-20 bg-[#F5F2EB]">
         {/* SECTION 02: Four Column Layout Grid (#FFFFFF Clean White Background with Vertical Lines) */}
-        <section className="relative bg-[#FFFFFF] py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
+        <section className="sticky top-0 z-20 bg-[#FFFFFF] py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
         <div className="mx-auto max-w-7xl w-full">
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-0 divide-y md:divide-y-0 lg:divide-x divide-[#1C1C1C]/15">
@@ -421,7 +419,7 @@ export default function CapabilityArchitecturePage() {
 
 
       {/* SECTION 05: 2-Column Section with Interactive Matrix Card (#F4EFE6 Warm Cream Background) */}
-      <section className="bg-[#F4EFE6] py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
+      <section className="sticky top-0 z-30 bg-[#F4EFE6] py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
         <div className="mx-auto max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -636,7 +634,7 @@ export default function CapabilityArchitecturePage() {
 
 
       {/* SECTION 06, 07, 08: Three Column Layout Grid (#FFFFFF Clean White Background with Vertical Lines) */}
-      <section className="bg-[#FFFFFF] py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
+      <section className="sticky top-0 z-40 bg-[#FFFFFF] py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
         <div className="mx-auto max-w-7xl w-full">
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-0 divide-y md:divide-y-0 md:divide-x divide-[#1C1C1C]/15">
@@ -795,7 +793,7 @@ export default function CapabilityArchitecturePage() {
 
 
       {/* Final Call to Action Section (Dark #0E0E10 / #121212 Background matching Image 2 design) */}
-      <section className="relative bg-[#0E0E10] text-[#FFFFFF] py-20 md:py-28 px-6 md:px-12 lg:px-20 overflow-hidden select-none border-t border-white/10">
+      <section className="sticky top-0 z-50 bg-[#0E0E10] text-[#FFFFFF] py-20 md:py-28 px-6 md:px-12 lg:px-20 overflow-hidden select-none border-t border-white/10">
         <div className="mx-auto max-w-7xl w-full space-y-10">
           
           {/* Top Label */}
@@ -859,7 +857,6 @@ export default function CapabilityArchitecturePage() {
 
         </div>
       </section>
-      </div>
     </div>
   );
 }

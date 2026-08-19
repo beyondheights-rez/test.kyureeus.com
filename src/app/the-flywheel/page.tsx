@@ -97,10 +97,8 @@ export default function TheFlywheelPage() {
         </div>
       </section>
 
-      {/* Container wrapper for sections sliding over hero */}
-      <div className="relative z-20 bg-[#F5F2EB]">
         {/* SECTION 02: Six Boxes Section (#F4EFE6 Warm Beige Background) */}
-        <section id="flywheel-details" className="relative bg-[#F4EFE6] py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
+        <section id="flywheel-details" className="sticky top-0 z-20 bg-[#F4EFE6] py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
           <div className="mx-auto max-w-7xl w-full">
           
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
@@ -285,7 +283,7 @@ export default function TheFlywheelPage() {
 
 
       {/* SECTION 03: Three Cards Section (#F5F2EB Background matching new design screenshot) */}
-      <section className="bg-[#F5F2EB] py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
+      <section className="sticky top-0 z-30 bg-[#F5F2EB] py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
         <div className="mx-auto max-w-7xl w-full">
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -306,7 +304,7 @@ export default function TheFlywheelPage() {
                   <img 
                     src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/KyureeusFlyWheel/diagram-viewport.png" 
                     alt="The Flywheel Turns Diagram" 
-                    loading="lazy"
+                    loading="eager"
                     decoding="async"
                     crossOrigin="anonymous"
                     className="w-full max-w-[280px] h-auto object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-300"
@@ -487,7 +485,7 @@ export default function TheFlywheelPage() {
 
 
       {/* SECTION 10: The Bottom Line (#0E0E10 Dark Background matching design screenshot) */}
-      <section className="bg-[#0E0E10] text-[#FFFFFF] py-20 md:py-28 px-6 md:px-12 lg:px-20 overflow-hidden select-none border-t border-white/10">
+      <section className="sticky top-0 z-40 bg-[#0E0E10] text-[#FFFFFF] py-20 md:py-28 px-6 md:px-12 lg:px-20 overflow-hidden select-none border-t border-white/10">
         <div className="mx-auto max-w-7xl w-full space-y-16">
           
           {/* Top Headline & CTA Button Container */}
@@ -577,7 +575,6 @@ export default function TheFlywheelPage() {
 
         </div>
       </section>
-      </div>
 
     </div>
   );

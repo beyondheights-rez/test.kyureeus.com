@@ -83,7 +83,7 @@ export default function WhyKyureeusPage() {
             <div className="flex items-center justify-center lg:col-span-6 py-4">
               <div id="flywheel" className="relative max-w-[640px] w-full flex items-center justify-center">
                 <img 
-                  src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/KyureeusFlyWheel/why%20kyureeus.png" 
+                  src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/KyureeusFlyWheelChanged/Why%20kyureeus%20flywheel.png" 
                   alt="Why Kyureeus Flywheel" 
                   loading="eager"
                   decoding="async"
@@ -97,10 +97,8 @@ export default function WhyKyureeusPage() {
         </div>
       </section>
 
-      {/* Container wrapper for sections sliding over hero */}
-      <div className="relative z-20 bg-[#F5F2EB]">
         {/* 2. Three Model Comparison Section (01, 02, 03) */}
-        <section className="relative bg-white py-16 md:py-24 px-6 md:px-12 lg:px-20">
+        <section className="sticky top-0 z-20 bg-white py-16 md:py-24 px-6 md:px-12 lg:px-20">
           <div className="mx-auto max-w-7xl w-full">
             <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#121212]/10 gap-12 lg:gap-0">
               
@@ -241,7 +239,7 @@ export default function WhyKyureeusPage() {
       </section>
 
       {/* 3. Three Column Section 2 (04, 05, 06) */}
-      <section className="bg-[#F5F2EB] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section className="sticky top-0 z-30 bg-[#F5F2EB] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#121212]/10 gap-12 lg:gap-0">
             
@@ -399,7 +397,7 @@ export default function WhyKyureeusPage() {
       </section>
 
       {/* 4. Two Column Compounding & Operating System Section (07, 08) */}
-      <section className="bg-[#F9F9FB] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section className="sticky top-0 z-40 bg-[#F9F9FB] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-[#121212]/10 gap-12 lg:gap-0">
             
@@ -510,7 +508,7 @@ export default function WhyKyureeusPage() {
       </section>
 
       {/* 5. Dark CTA & Real Outputs Section (09 Build The Future) */}
-      <section className="bg-[#1C1C1C] text-[#F5F2EB] border-t border-white/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section className="sticky top-0 z-50 bg-[#1C1C1C] text-[#F5F2EB] border-t border-white/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
@@ -578,7 +576,6 @@ export default function WhyKyureeusPage() {
           </div>
         </div>
       </section>
-      </div>
     </div>
   );
 }

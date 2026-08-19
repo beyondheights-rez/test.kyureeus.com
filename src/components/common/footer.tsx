@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 export function Footer() {
   const pathname = usePathname();
-  const hideCtaBanner = pathname === "/whykyureeus" || pathname === "/bootcamps" || pathname === "/how-we-teach" || pathname === "/why-it-matters" || pathname === "/capability-architecture" || pathname === "/the-flywheel" || pathname === "/about-us" || pathname === "/contact";
+  const hideCtaBanner = pathname === "/whykyureeus" || pathname === "/bootcamps" || pathname === "/how-we-teach" || pathname === "/why-it-matters" || pathname === "/capability-architecture" || pathname === "/the-flywheel" || pathname === "/about-us" || pathname === "/contact" || pathname === "/privacy-policy" || pathname === "/refund-policy";
 
   return (
     <footer className="w-full flex flex-col">
@@ -43,58 +43,58 @@ export function Footer() {
       )}
 
       {/* Main Footer Directory Section */}
-      <div className="bg-[#F9F9FB] text-[#121212] py-16 md:py-20 px-6 md:px-12 lg:px-20 border-t border-[#121212]/10">
+      <div className="bg-[#F8F8F9] text-[#121212] py-16 md:py-20 px-6 md:px-12 lg:px-24">
         <div className="mx-auto max-w-7xl w-full space-y-16">
           
           {/* Main Footer Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
-            {/* Left Brand & Social Column (lg:col-span-4) */}
-            <div className="flex flex-col items-start space-y-6 lg:col-span-4">
-              {/* Brand Logo Image */}
-              <div className="space-y-3">
+            {/* Left Brand & Social Column */}
+            <div className="flex flex-col items-start space-y-5 lg:col-span-5">
+              {/* Brand Header / Logo */}
+              <div className="space-y-2">
                 <Link href="/" className="inline-block focus:outline-none">
-                  <img 
-                    src="/assets/icons/Kyureeus.svg" 
-                    alt="Kyureeus Logo" 
-                    className="h-14 sm:h-16 md:h-20 w-auto cursor-pointer transition-transform duration-300 hover:scale-[1.03]" 
+                  <img
+                    src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/index-page/logo/Kyureeus.svg"
+                    alt="Kyureeus Logo"
+                    className="h-14 sm:h-16 md:h-20 w-auto cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
                   />
                 </Link>
-                <p className="font-sans text-[11px] font-bold tracking-wider text-[#CF5A30] uppercase">
+                <p className="font-sans text-[11px] sm:text-[12px] font-bold tracking-wider text-[#CF5A30] uppercase">
                   BUILDING ENTERPRISES CREATING ENDURING VALUE
                 </p>
               </div>
 
               {/* Social Media Pill Buttons */}
-              <div className="flex flex-wrap items-center gap-2.5 pt-2">
-                {[
-                  { name: "LinkedIn", href: "https://linkedin.com" },
-                  { name: "Twitter/X", href: "https://twitter.com" },
-                  { name: "YouTube", href: "https://youtube.com" },
-                  { name: "Instagram", href: "https://instagram.com" }
-                ].map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white hover:bg-[#F5F2EB] text-[#121212] hover:text-[#CF5A30] px-4 py-2 text-[12px] font-medium rounded-lg border border-[#121212]/10 hover:border-[#CF5A30]/40 transition-all shadow-2xs"
-                  >
-                    {social.name}
-                  </a>
-                ))}
+              <div className="flex items-center gap-3 pt-3">
+                <a
+                  href="https://www.linkedin.com/showcase/kyureeus/posts/?feedView=all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white hover:bg-gray-50 text-[#333333] hover:text-[#CF5A30] px-4 py-1.5 text-[12px] font-medium rounded-md border border-gray-200 transition-colors shadow-2xs"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://www.instagram.com/kyureeus.edtech?igsh=MTlsNjJ3NjBudnprcQ==&igsi=MTlsNjJ3NjBudnprcQ=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white hover:bg-gray-50 text-[#333333] hover:text-[#CF5A30] px-4 py-1.5 text-[12px] font-medium rounded-md border border-gray-200 transition-colors shadow-2xs"
+                >
+                  Instagram
+                </a>
               </div>
             </div>
 
-            {/* Right Links Grid (lg:col-span-8) */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 lg:col-span-8 w-full">
+            {/* Right Links Grid (2 columns matching design) */}
+            <div className="flex flex-col sm:flex-row gap-12 sm:gap-24 lg:col-span-7 w-full justify-start sm:justify-end">
               
               {/* Column 1: EXPLORE */}
-              <div className="space-y-4">
-                <span className="font-sans text-[12px] font-extrabold tracking-wider text-[#121212] uppercase block">
+              <div className="space-y-4 sm:min-w-[160px]">
+                <h4 className="font-sans text-[12px] font-bold tracking-wider text-[#121212] uppercase">
                   EXPLORE
-                </span>
-                <ul className="space-y-3 font-sans text-[13px] text-[#555555]">
+                </h4>
+                <ul className="space-y-3 font-sans text-[14px] text-[#555555]">
                   <li>
                     <Link href="/whykyureeus" className="hover:text-[#CF5A30] transition-colors">
                       Why Kyureeus
@@ -111,100 +111,37 @@ export function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#flywheel" className="hover:text-[#CF5A30] transition-colors">
+                    <Link href="/the-flywheel" className="hover:text-[#CF5A30] transition-colors">
                       The Flywheel
                     </Link>
                   </li>
-                  <li>
-                    <Link href="/#blog" className="hover:text-[#CF5A30] transition-colors">
-                      Blog
-                    </Link>
-                  </li>
                 </ul>
               </div>
 
-              {/* Column 2: FOR ENTERPRISES */}
-              <div className="space-y-4">
-                <span className="font-sans text-[12px] font-extrabold tracking-wider text-[#121212] uppercase block">
-                  FOR ENTERPRISES
-                </span>
-                <ul className="space-y-3 font-sans text-[13px] text-[#555555]">
-                  <li>
-                    <Link href="/#enterprise" className="hover:text-[#CF5A30] transition-colors">
-                      Enterprise Solutions
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#approach" className="hover:text-[#CF5A30] transition-colors">
-                      Our Approach
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#stories" className="hover:text-[#CF5A30] transition-colors">
-                      Success Stories
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#partners" className="hover:text-[#CF5A30] transition-colors">
-                      Partners
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Column 3: COMPANY */}
-              <div className="space-y-4">
-                <span className="font-sans text-[12px] font-extrabold tracking-wider text-[#121212] uppercase block">
+              {/* Column 2: COMPANY */}
+              <div className="space-y-4 sm:min-w-[160px]">
+                <h4 className="font-sans text-[12px] font-bold tracking-wider text-[#121212] uppercase">
                   COMPANY
-                </span>
-                <ul className="space-y-3 font-sans text-[13px] text-[#555555]">
+                </h4>
+                <ul className="space-y-3 font-sans text-[14px] text-[#555555]">
                   <li>
-                    <Link href="/#about" className="hover:text-[#CF5A30] transition-colors">
+                    <Link href="/about-us" className="hover:text-[#CF5A30] transition-colors">
                       About Us
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#leadership" className="hover:text-[#CF5A30] transition-colors">
-                      Leadership
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#careers" className="hover:text-[#CF5A30] transition-colors">
-                      Careers
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#contact" className="hover:text-[#CF5A30] transition-colors">
+                    <Link href="/contact" className="hover:text-[#CF5A30] transition-colors">
                       Contact Us
                     </Link>
                   </li>
-                </ul>
-              </div>
-
-              {/* Column 4: RESOURCES */}
-              <div className="space-y-4">
-                <span className="font-sans text-[12px] font-extrabold tracking-wider text-[#121212] uppercase block">
-                  RESOURCES
-                </span>
-                <ul className="space-y-3 font-sans text-[13px] text-[#555555]">
                   <li>
-                    <Link href="/#architecture" className="hover:text-[#CF5A30] transition-colors">
-                      Capability Architecture
+                    <Link href="/privacy-policy" className="hover:text-[#CF5A30] transition-colors">
+                      Privacy Policy
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#educators" className="hover:text-[#CF5A30] transition-colors">
-                      For Educators
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#learners" className="hover:text-[#CF5A30] transition-colors">
-                      For Learners
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#papers" className="hover:text-[#CF5A30] transition-colors">
-                      White Papers
+                    <Link href="/refund-policy" className="hover:text-[#CF5A30] transition-colors">
+                      Refund Policy
                     </Link>
                   </li>
                 </ul>
@@ -214,19 +151,9 @@ export function Footer() {
 
           </div>
 
-          {/* Bottom Copyright & Terms Strip */}
-          <div className="pt-8 border-t border-[#121212]/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-sans text-[12px] text-[#666666]">
-            <div>
-              © 2025 Kyureeus. All rights reserved.
-            </div>
-            <div className="flex items-center gap-6">
-              <Link href="/privacy-policy" className="hover:text-[#121212] transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms-of-use" className="hover:text-[#121212] transition-colors">
-                Terms of Use
-              </Link>
-            </div>
+          {/* Bottom Copyright Strip */}
+          <div className="pt-8 border-t border-gray-200/80 font-sans text-[13px] text-[#666666]">
+            © 2026 Kyureeus. All rights reserved.
           </div>
 
         </div>
@@ -235,3 +162,4 @@ export function Footer() {
     </footer>
   );
 }
+

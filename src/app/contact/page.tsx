@@ -10,20 +10,51 @@ export default function ContactUsPage() {
     name: "",
     email: "",
     message: "",
-    subscribe: true,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "1acd2b42-d699-4052-a572-8c04887fae03",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setErrorMessage(result.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setErrorMessage("Unable to send message. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="flex flex-col flex-1 bg-[#F5F2EB] text-[#1C1C1C] min-h-screen">
-      <section className="py-12 md:py-20 px-6 md:px-12 lg:px-20">
+      <section className="py-12 md:py-20 px-6 md:px-12 lg:px-20 bg-[#F5F2EB]">
         <div className="mx-auto max-w-7xl w-full">
-          
+
           {/* Breadcrumb Header */}
           <div className="flex items-center gap-2 font-sans text-xs font-medium text-[#666666] mb-8">
             <Link href="/" className="hover:text-[#1C1C1C] transition-colors">
@@ -35,10 +66,10 @@ export default function ContactUsPage() {
 
           {/* Main 2-Column Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            
+
             {/* Left Column: Heading, Subtitle & Info Cards */}
             <div className="lg:col-span-6 space-y-8">
-              
+
               {/* Badge */}
               <div className="inline-flex items-center rounded-md border border-[#CF5A30]/40 bg-[#CF5A30]/10 px-3 py-1 text-[11px] font-bold tracking-widest text-[#CF5A30] uppercase font-sans">
                 GET IN TOUCH
@@ -56,7 +87,7 @@ export default function ContactUsPage() {
 
               {/* Info Cards Grid (MESSAGE US & CALL US) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-                
+
                 {/* Card 1: MESSAGE US */}
                 <div className="group bg-white rounded-2xl p-6 border border-[#1C1C1C]/10 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 space-y-4 cursor-pointer">
                   <div className="flex items-center gap-3">
@@ -73,8 +104,8 @@ export default function ContactUsPage() {
                   </p>
 
                   <div className="pt-2 border-t border-[#1C1C1C]/10">
-                    <a 
-                      href="mailto:info@kyureeus.com" 
+                    <a
+                      href="mailto:info@kyureeus.com"
                       className="font-sans text-xs font-bold text-[#CF5A30] hover:underline transition-all"
                     >
                       info@kyureeus.com
@@ -98,8 +129,8 @@ export default function ContactUsPage() {
                   </p>
 
                   <div className="pt-2 border-t border-[#1C1C1C]/10">
-                    <a 
-                      href="tel:+919363486258" 
+                    <a
+                      href="tel:+919363486258"
                       className="font-sans text-xs font-bold text-[#CF5A30] hover:underline transition-all"
                     >
                       +91 93634 86258
@@ -113,7 +144,7 @@ export default function ContactUsPage() {
 
             {/* Right Column: White Card Form (SEND A MESSAGE) */}
             <div className="lg:col-span-6 bg-white rounded-3xl p-8 sm:p-10 border border-[#1C1C1C]/10 shadow-lg">
-              
+
               <div className="space-y-2 mb-8">
                 <h2 className="font-bebas text-3xl sm:text-4xl tracking-wide text-[#1C1C1C] uppercase">
                   SEND A MESSAGE
@@ -132,8 +163,11 @@ export default function ContactUsPage() {
                   <p className="font-sans text-xs text-[#555555] max-w-md mx-auto">
                     Thank you for reaching out. A Kyureeus system advisor will review your message and contact you shortly.
                   </p>
-                  <Button 
-                    onClick={() => setIsSubmitted(false)}
+                  <Button
+                    onClick={() => {
+                      setIsSubmitted(false);
+                      setErrorMessage("");
+                    }}
                     className="rounded-lg bg-[#1C1C1C] hover:bg-[#CF5A30] text-white text-xs font-bold uppercase px-6 py-3 cursor-pointer"
                   >
                     Send Another Message
@@ -141,22 +175,23 @@ export default function ContactUsPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  
+
                   {/* Name and Email Row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    
+
                     {/* Your Name */}
                     <div className="space-y-2">
                       <label className="font-sans text-xs font-bold text-[#1C1C1C] block">
                         Your Name
                       </label>
-                      <input 
+                      <input
                         type="text"
                         required
-                        placeholder="Jane Doe"
+                        disabled={isSubmitting}
+                        placeholder="Name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full rounded-xl border border-[#1C1C1C]/15 bg-white px-4 py-3 font-sans text-xs text-[#1C1C1C] placeholder-[#999999] outline-none focus:border-[#CF5A30] focus:ring-1 focus:ring-[#CF5A30] transition-all"
+                        className="w-full rounded-xl border border-[#1C1C1C]/15 bg-white px-4 py-3 font-sans text-xs text-[#1C1C1C] placeholder-[#999999] outline-none focus:border-[#CF5A30] focus:ring-1 focus:ring-[#CF5A30] transition-all disabled:opacity-50"
                       />
                     </div>
 
@@ -165,13 +200,14 @@ export default function ContactUsPage() {
                       <label className="font-sans text-xs font-bold text-[#1C1C1C] block">
                         Your Email
                       </label>
-                      <input 
+                      <input
                         type="email"
                         required
-                        placeholder="jane@enterprise.com"
+                        disabled={isSubmitting}
+                        placeholder="example@gmail.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full rounded-xl border border-[#1C1C1C]/15 bg-white px-4 py-3 font-sans text-xs text-[#1C1C1C] placeholder-[#999999] outline-none focus:border-[#CF5A30] focus:ring-1 focus:ring-[#CF5A30] transition-all"
+                        className="w-full rounded-xl border border-[#1C1C1C]/15 bg-white px-4 py-3 font-sans text-xs text-[#1C1C1C] placeholder-[#999999] outline-none focus:border-[#CF5A30] focus:ring-1 focus:ring-[#CF5A30] transition-all disabled:opacity-50"
                       />
                     </div>
 
@@ -182,37 +218,32 @@ export default function ContactUsPage() {
                     <label className="font-sans text-xs font-bold text-[#1C1C1C] block">
                       How Can We Help?
                     </label>
-                    <textarea 
+                    <textarea
                       rows={5}
                       required
+                      disabled={isSubmitting}
                       placeholder="Describe the team, objectives, or operational outcomes you want to secure..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full rounded-xl border border-[#1C1C1C]/15 bg-white px-4 py-3 font-sans text-xs text-[#1C1C1C] placeholder-[#999999] outline-none focus:border-[#CF5A30] focus:ring-1 focus:ring-[#CF5A30] transition-all resize-none"
+                      className="w-full rounded-xl border border-[#1C1C1C]/15 bg-white px-4 py-3 font-sans text-xs text-[#1C1C1C] placeholder-[#999999] outline-none focus:border-[#CF5A30] focus:ring-1 focus:ring-[#CF5A30] transition-all resize-none disabled:opacity-50"
                     />
                   </div>
 
-                  {/* Checkbox: Subscribe to Newsletter */}
-                  <div className="flex items-center gap-3 pt-1">
-                    <input 
-                      type="checkbox"
-                      id="subscribe"
-                      checked={formData.subscribe}
-                      onChange={(e) => setFormData({ ...formData, subscribe: e.target.checked })}
-                      className="h-4 w-4 rounded border-[#1C1C1C]/30 text-[#CF5A30] focus:ring-[#CF5A30] cursor-pointer"
-                    />
-                    <label htmlFor="subscribe" className="font-sans text-xs font-bold text-[#1C1C1C] cursor-pointer select-none">
-                      Subscribe to Newsletter
-                    </label>
-                  </div>
+                  {/* Error Message Feedback */}
+                  {errorMessage && (
+                    <p className="font-sans text-xs text-red-500 font-bold bg-red-50 border border-red-200 rounded-lg p-3">
+                      {errorMessage}
+                    </p>
+                  )}
 
                   {/* Submit Button */}
-                  <Button 
+                  <Button
                     type="submit"
-                    className="w-full group flex items-center justify-center gap-2 rounded-xl bg-[#CF5A30] hover:bg-[#1C1C1C] text-white py-6 text-xs sm:text-sm font-bold tracking-widest uppercase transition-colors duration-300 shadow-md cursor-pointer"
+                    disabled={isSubmitting}
+                    className="w-full group flex items-center justify-center gap-2 rounded-xl bg-[#CF5A30] hover:bg-[#1C1C1C] text-white py-6 text-xs sm:text-sm font-bold tracking-widest uppercase transition-colors duration-300 shadow-md cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    SEND MESSAGE
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
+                    {!isSubmitting && <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />}
                   </Button>
 
                 </form>

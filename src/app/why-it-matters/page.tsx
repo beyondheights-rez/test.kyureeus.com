@@ -78,110 +78,107 @@ export default function WhyItMattersPage() {
       </section>
 
 
-      {/* SECTION 02: The Problem (Four Column Layout + Bottom Banner) */}
-      <section className="bg-white border-b border-[#1C1C1C]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
-        <div className="mx-auto max-w-7xl w-full space-y-16">
+        {/* SECTION 02: The Problem (Four Column Layout + Bottom Banner) */}
+        <section className="sticky top-0 z-20 bg-white border-b border-[#1C1C1C]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl w-full space-y-16">
 
-          {/* Top 4-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+            {/* Top 4-Column Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
 
-            {/* Column 1: Number + Label + Title */}
-            <div className="lg:col-span-4 flex items-start gap-4">
-              <span className="font-bebas text-6xl sm:text-7xl font-bold text-[#CF5A30] leading-none shrink-0">
-                02
-              </span>
-              <div className="space-y-2 pt-1">
-                <span className="font-sans text-[11px] font-extrabold tracking-widest text-[#CF5A30] uppercase block">
-                  THE PROBLEM
+              {/* Column 1: Number + Label + Title */}
+              <div className="lg:col-span-4 flex items-start gap-4">
+                <span className="font-bebas text-6xl sm:text-7xl font-bold text-[#CF5A30] leading-none shrink-0">
+                  02
                 </span>
-                <h2 className="font-bebas text-2xl sm:text-3xl md:text-[32px] leading-[1.08] tracking-wide text-[#1C1C1C] uppercase">
-                  WE OPTIMIZED LEARNING. WE FORGOT PERFORMANCE.
-                </h2>
+                <div className="space-y-2 pt-1">
+                  <span className="font-sans text-[11px] font-extrabold tracking-widest text-[#CF5A30] uppercase block">
+                    THE PROBLEM
+                  </span>
+                  <h2 className="font-bebas text-2xl sm:text-3xl md:text-[32px] leading-[1.08] tracking-wide text-[#1C1C1C] uppercase">
+                    WE OPTIMIZED LEARNING. WE FORGOT PERFORMANCE.
+                  </h2>
+                </div>
+              </div>
+
+              {/* Column 2: Paragraph text */}
+              <div className="lg:col-span-3 space-y-4 font-sans text-[15px] leading-relaxed text-[#1C1C1C]">
+                <p>
+                  For decades, education has measured success by what people know.
+                </p>
+                <p>
+                  Modern enterprises measure success by what people can do.
+                </p>
+                <p className="font-bold text-[#CF5A30]">
+                  There is a profound difference.
+                </p>
+              </div>
+
+              {/* Column 3: Bullet points */}
+              <div className="lg:col-span-3 space-y-3 font-sans text-[15px] leading-relaxed text-[#1C1C1C]">
+                <p>• Information does not build products.</p>
+                <p>• Certificates do not operate businesses.</p>
+                <p>• Knowledge alone does not create innovation.</p>
+                <p className="font-bold text-[#1C1C1C] pt-1">
+                  Capability does.
+                </p>
+              </div>
+
+              {/* Column 4: Document with Target Sight Graphic Icon */}
+              <div className="lg:col-span-2 flex items-center justify-center lg:justify-end py-2">
+                <motion.div 
+                  whileHover={{ scale: 1.18, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  className="relative w-44 h-44 sm:w-48 sm:h-48 select-none cursor-pointer"
+                >
+                  <svg viewBox="0 0 160 160" className="w-full h-full">
+                    {/* Document Card Outline */}
+                    <rect
+                      x="20"
+                      y="15"
+                      width="95"
+                      height="125"
+                      rx="4"
+                      fill="#F5F2EB"
+                      stroke="#CF5A30"
+                      strokeWidth="1.5"
+                    />
+                    {/* Horizontal Document Lines */}
+                    <line x1="36" y1="42" x2="98" y2="42" stroke="#CF5A30" strokeWidth="2" strokeLinecap="round" />
+                    <line x1="36" y1="62" x2="98" y2="62" stroke="#CF5A30" strokeWidth="2" strokeLinecap="round" />
+                    <line x1="36" y1="82" x2="75" y2="82" stroke="#CF5A30" strokeWidth="2" strokeLinecap="round" />
+
+                    {/* Target Sight Overlay Icon at Bottom-Right */}
+                    <g transform="translate(118, 105)">
+                      {/* Background Circle */}
+                      <circle cx="0" cy="0" r="28" fill="#FFFFFF" stroke="#1C1C1C" strokeWidth="1.5" />
+                      {/* Inner Target Circle */}
+                      <circle cx="0" cy="0" r="11" fill="none" stroke="#1C1C1C" strokeWidth="1.5" />
+                      {/* Target Crosshairs Lines */}
+                      <line x1="-34" y1="0" x2="-22" y2="0" stroke="#1C1C1C" strokeWidth="1.5" />
+                      <line x1="22" y1="0" x2="34" y2="0" stroke="#1C1C1C" strokeWidth="1.5" />
+                      <line x1="0" y1="-34" x2="0" y2="-22" stroke="#1C1C1C" strokeWidth="1.5" />
+                      <line x1="0" y1="22" x2="0" y2="34" stroke="#1C1C1C" strokeWidth="1.5" />
+                    </g>
+                  </svg>
+                </motion.div>
+              </div>
+
+            </div>
+
+            {/* Bottom Wide Text Block */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-6">
+              <div className="lg:col-start-5 lg:col-span-8">
+                <p className="font-sans text-[15px] md:text-[16px] leading-relaxed text-[#1C1C1C]">
+                  The world&apos;s largest skills gap is not a shortage of intelligence. It is a shortage of people who can consistently create enterprise value.
+                </p>
               </div>
             </div>
 
-            {/* Column 2: Paragraph text */}
-            <div className="lg:col-span-3 space-y-4 font-sans text-[15px] leading-relaxed text-[#1C1C1C]">
-              <p>
-                For decades, education has measured success by what people know.
-              </p>
-              <p>
-                Modern enterprises measure success by what people can do.
-              </p>
-              <p className="font-bold text-[#CF5A30]">
-                There is a profound difference.
-              </p>
-            </div>
-
-            {/* Column 3: Bullet points */}
-            <div className="lg:col-span-3 space-y-3 font-sans text-[15px] leading-relaxed text-[#1C1C1C]">
-              <p>• Information does not build products.</p>
-              <p>• Certificates do not operate businesses.</p>
-              <p>• Knowledge alone does not create innovation.</p>
-              <p className="font-bold text-[#1C1C1C] pt-1">
-                Capability does.
-              </p>
-            </div>
-
-            {/* Column 4: Document with Target Sight Graphic Icon */}
-            <div className="lg:col-span-2 flex items-center justify-center lg:justify-end py-2">
-              <motion.div 
-                whileHover={{ scale: 1.18, rotate: 5 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                className="relative w-44 h-44 sm:w-48 sm:h-48 select-none cursor-pointer"
-              >
-                <svg viewBox="0 0 160 160" className="w-full h-full">
-                  {/* Document Card Outline */}
-                  <rect
-                    x="20"
-                    y="15"
-                    width="95"
-                    height="125"
-                    rx="4"
-                    fill="#F5F2EB"
-                    stroke="#CF5A30"
-                    strokeWidth="1.5"
-                  />
-                  {/* Horizontal Document Lines */}
-                  <line x1="36" y1="42" x2="98" y2="42" stroke="#CF5A30" strokeWidth="2" strokeLinecap="round" />
-                  <line x1="36" y1="62" x2="98" y2="62" stroke="#CF5A30" strokeWidth="2" strokeLinecap="round" />
-                  <line x1="36" y1="82" x2="75" y2="82" stroke="#CF5A30" strokeWidth="2" strokeLinecap="round" />
-
-                  {/* Target Sight Overlay Icon at Bottom-Right */}
-                  <g transform="translate(118, 105)">
-                    {/* Background Circle */}
-                    <circle cx="0" cy="0" r="28" fill="#FFFFFF" stroke="#1C1C1C" strokeWidth="1.5" />
-                    {/* Inner Target Circle */}
-                    <circle cx="0" cy="0" r="11" fill="none" stroke="#1C1C1C" strokeWidth="1.5" />
-                    {/* Target Crosshairs Lines */}
-                    <line x1="-34" y1="0" x2="-22" y2="0" stroke="#1C1C1C" strokeWidth="1.5" />
-                    <line x1="22" y1="0" x2="34" y2="0" stroke="#1C1C1C" strokeWidth="1.5" />
-                    <line x1="0" y1="-34" x2="0" y2="-22" stroke="#1C1C1C" strokeWidth="1.5" />
-                    <line x1="0" y1="22" x2="0" y2="34" stroke="#1C1C1C" strokeWidth="1.5" />
-                  </g>
-                </svg>
-              </motion.div>
-            </div>
-
           </div>
+        </section>
 
-          {/* Bottom Wide Text Block */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-6">
-            <div className="lg:col-start-5 lg:col-span-8">
-              <p className="font-sans text-[15px] md:text-[16px] leading-relaxed text-[#1C1C1C]">
-                The world&apos;s largest skills gap is not a shortage of intelligence. It is a shortage of people who can consistently create enterprise value.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* Container wrapper for sections sliding over hero */}
-      <div className="relative z-20 bg-[#F5F2EB]">
-        {/* SECTION 02: Two Column Feature Split (01 & 02) */}
-        <section className="relative bg-white py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
+        {/* SECTION 03: The Shift */}
+        <section className="sticky top-0 z-30 bg-white py-16 md:py-24 px-6 md:px-12 lg:px-20 border-b border-[#1C1C1C]/10">
         <div className="mx-auto max-w-7xl w-full space-y-16">
 
           {/* Top 4-Column Grid */}
@@ -279,7 +276,7 @@ export default function WhyItMattersPage() {
 
 
       {/* SECTION 04: The Real Job (Four Column Layout + Bottom Banner) */}
-      <section className="bg-white border-b border-[#1C1C1C]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section className="sticky top-0 z-40 bg-white border-b border-[#1C1C1C]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full space-y-16">
 
           {/* Top 4-Column Grid */}
@@ -405,7 +402,7 @@ export default function WhyItMattersPage() {
 
 
       {/* SECTION 05: The Kyureeus Difference (Four Column Layout) */}
-      <section className="bg-white border-b border-[#1C1C1C]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section className="sticky top-0 z-50 bg-white border-b border-[#1C1C1C]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full space-y-16">
 
           {/* Top 4-Column Grid */}
@@ -502,7 +499,7 @@ export default function WhyItMattersPage() {
 
 
       {/* SECTION 07: Why This Changes Everything (Four Column Layout) */}
-      <section className="bg-[#F5F2EB] border-b border-[#1C1C1C]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section className="sticky top-0 z-60 bg-[#F5F2EB] border-b border-[#1C1C1C]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full space-y-16">
 
           {/* Top 4-Column Grid */}
@@ -621,7 +618,7 @@ export default function WhyItMattersPage() {
 
 
       {/* Final Call to Action Section (Dark Background #1C1C1C, White Title & Orange Accents #CF5A30) */}
-      <section className="relative bg-[#1C1C1C] text-[#FFFFFF] py-20 md:py-28 px-6 md:px-12 lg:px-20 overflow-hidden select-none">
+      <section className="sticky top-0 z-70 bg-[#1C1C1C] text-[#FFFFFF] py-20 md:py-28 px-6 md:px-12 lg:px-20 overflow-hidden select-none">
         {/* Background Watermark K on Far Left */}
         <div className="absolute -left-6 md:-left-8 top-1/2 -translate-y-1/2 font-bebas text-[180px] sm:text-[240px] md:text-[320px] font-bold text-white/[0.06] pointer-events-none leading-none select-none">
           K
@@ -654,7 +651,6 @@ export default function WhyItMattersPage() {
           </div>
         </div>
       </section>
-      </div>
     </div>
   );
 }

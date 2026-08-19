@@ -88,10 +88,8 @@ export default function BootcampsPage() {
         </div>
       </section>
 
-      {/* Container wrapper for sections sliding over hero */}
-      <div className="relative z-20 bg-[#F5F2EB]">
         {/* 2. Four Column Methodology Section (01, 02, 03, 04) */}
-        <section className="relative bg-white py-16 md:py-24 px-6 md:px-12 lg:px-20">
+        <section className="sticky top-0 z-20 bg-white py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#121212]/10 gap-12 lg:gap-0">
             
@@ -245,7 +243,7 @@ export default function BootcampsPage() {
       </section>
 
       {/* 3. Four Layer Capability Portfolio Section (05) */}
-      <section className="bg-[#F4EFE6] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section className="sticky top-0 z-30 bg-[#F4EFE6] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full space-y-12">
           
           <div className="space-y-3">
@@ -435,7 +433,7 @@ export default function BootcampsPage() {
       </section>
 
       {/* 4. Two Column Designed With Enterprise & Builder Cycle Section (06, 07) */}
-      <section className="bg-white border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section className="sticky top-0 z-40 bg-white border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-[#121212]/10 gap-12 lg:gap-0">
             
@@ -521,7 +519,7 @@ export default function BootcampsPage() {
       </section>
 
       {/* 5. Dark CTA & Final Outcome Section (08 / bg-[#1C1C1C]) */}
-      <section className="bg-[#1C1C1C] text-[#F5F2EB] border-t border-white/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section className="sticky top-0 z-50 bg-[#1C1C1C] text-[#F5F2EB] border-t border-white/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full">
 
           {/* Main 2-Column Content */}
@@ -566,7 +564,6 @@ export default function BootcampsPage() {
 
         </div>
       </section>
-      </div>
     </div>
   );
 }

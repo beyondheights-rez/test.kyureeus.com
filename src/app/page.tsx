@@ -94,10 +94,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Container wrapper for sections sliding over hero */}
-      <div className="relative z-20 bg-[#F5F2EB]">
         {/* 2. Home Page - Why Kyureeus Section */}
-        <section id="why-kyureeus" className="relative bg-white py-16 md:py-24 px-6 md:px-12 lg:px-20">
+        <section id="why-kyureeus" className="sticky top-0 z-20 bg-white py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#121212]/10 gap-12 lg:gap-0">
             
@@ -213,7 +211,7 @@ export default function Home() {
       </section>
 
       {/* 3. Home Page - Why It Matters (Output) Section */}
-      <section id="why-it-matters" className="bg-[#EFEBE0] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section id="why-it-matters" className="sticky top-0 z-30 bg-[#EFEBE0] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full space-y-16">
           
           {/* Row 1: System Comparison (Left) & Title/Text block (Right) */}
@@ -438,7 +436,7 @@ export default function Home() {
       </section>
 
       {/* 4. Home Page - Capability Architecture Section */}
-      <section id="capability-architecture" className="bg-white border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section id="capability-architecture" className="sticky top-0 z-40 bg-white border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full space-y-12">
           
           {/* Row 1: Badges & Text header */}
@@ -574,7 +572,7 @@ export default function Home() {
       </section>
 
       {/* 5. Home Page - Bootcamps Pathways Section */}
-      <section id="bootcamps" className="bg-[#F5F2EB] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section id="bootcamps" className="sticky top-0 z-50 bg-[#F5F2EB] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full space-y-12">
           
           {/* Header row */}
@@ -848,7 +846,7 @@ export default function Home() {
       </section>
 
       {/* 6. Home Page - How We Teach Section */}
-      <section id="how-we-teach" className="bg-white border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section id="how-we-teach" className="sticky top-0 z-60 bg-white border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             
@@ -961,7 +959,7 @@ export default function Home() {
       </section>
 
       {/* 7. Home Page - Partnership / CTA Section */}
-      <section id="partnership" className="bg-[#EFEBE0] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section id="partnership" className="sticky top-0 z-70 bg-[#EFEBE0] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
@@ -1033,7 +1031,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      </div>
     </div>
   );
 }

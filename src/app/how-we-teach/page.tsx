@@ -96,7 +96,7 @@ export default function HowWeTeachPage() {
             <div className="flex items-center justify-center lg:col-span-6 py-4">
               <div id="flywheel" className="relative max-w-[640px] w-full flex items-center justify-center">
                 <img 
-                  src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/KyureeusFlyWheel/how%20we%20teach.png" 
+                  src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/kyureeus-assets/KyureeusFlyWheelChanged/How%20we%20teach%20flywheel.png" 
                   alt="How We Teach Flywheel" 
                   loading="eager"
                   decoding="async"
@@ -110,10 +110,8 @@ export default function HowWeTeachPage() {
         </div>
       </section>
 
-      {/* Container wrapper for sections sliding over hero */}
-      <div className="relative z-20 bg-[#F5F2EB]">
         {/* 2. Job-First Approach Section (02 & 03) on bg-white */}
-        <section className="relative bg-white py-16 md:py-24 px-6 md:px-12 lg:px-20">
+        <section className="sticky top-0 z-20 bg-white py-16 md:py-24 px-6 md:px-12 lg:px-20">
           <div className="mx-auto max-w-7xl w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-[#121212]/10 gap-12 lg:gap-0">
               
@@ -249,7 +247,7 @@ export default function HowWeTeachPage() {
       </section>
 
       {/* 3. 7-Step Capability Cycle Section (04) on bg-[#F4EFE6] */}
-      <section className="bg-[#F4EFE6] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section className="sticky top-0 z-30 bg-[#F4EFE6] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full space-y-12">
           
           <div className="space-y-3">
@@ -317,7 +315,7 @@ export default function HowWeTeachPage() {
       </section>
 
       {/* 4. Evidence & Integration Section (05 & 06) on bg-white */}
-      <section className="bg-white border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section className="sticky top-0 z-40 bg-white border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-[#121212]/10 gap-12 lg:gap-0">
             
@@ -411,7 +409,7 @@ export default function HowWeTeachPage() {
       </section>
 
       {/* 5. Feedback & Compounding Section (07 & 08) on bg-[#F4EFE6] */}
-      <section className="bg-[#F4EFE6] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section className="sticky top-0 z-50 bg-[#F4EFE6] border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-[#121212]/10 gap-12 lg:gap-0">
             
@@ -513,7 +511,7 @@ export default function HowWeTeachPage() {
       </section>
 
       {/* 6. Capability Studio Section (09) on bg-white */}
-      <section className="bg-white border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section className="sticky top-0 z-60 bg-white border-t border-[#121212]/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -578,7 +576,7 @@ export default function HowWeTeachPage() {
       </section>
 
       {/* 7. Dark Final CTA Section (bg-[#0E0E10]) */}
-      <section className="bg-[#0E0E10] text-[#F5F2EB] border-t border-white/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
+      <section className="sticky top-0 z-70 bg-[#0E0E10] text-[#F5F2EB] border-t border-white/10 py-16 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl w-full">
           <div className="flex flex-col items-start space-y-4 md:space-y-6">
             <h2 className="font-bebas text-3xl sm:text-4xl md:text-[38px] leading-[1.05] tracking-wide text-[#F5F2EB] uppercase">
@@ -600,7 +598,6 @@ export default function HowWeTeachPage() {
           </div>
         </div>
       </section>
-      </div>
     </div>
   );
 }
