@@ -305,18 +305,24 @@ export default function BootcampsPage() {
               <div className="p-3.5 sm:p-4 flex-1 bg-white">
                 <ul className="space-y-1 font-sans text-[12px] sm:text-[12.5px] font-bold text-[#3A3E40]">
                   {[
-                    { name: "Engineering Architecture", id: undefined },
-                    { name: "AI Engineering", id: "ai-engineering" },
-                    { name: "Product Architecture", id: undefined },
-                    { name: "Cybersecurity Architecture", id: "cybersecurity" },
-                    { name: "Cloud & Platform Architecture", id: "cloud-platform" },
-                    { name: "Data & Intelligence", id: undefined },
-                    { name: "Robotics & Autonomy", id: undefined },
-                    { name: "Experience Design", id: undefined }
+                    { name: "Robotics & Autonomy", href: "/bootcamps/robotics-engineering" },
+                    { name: "AI Engineering", href: "/bootcamps/ai-engineering" },
+                    { name: "Cybersecurity Architecture", href: "/bootcamps/cyber-security" },
+                    { name: "Cloud & Platform Architecture", href: "/bootcamps/cloud-platform" },
+                    { name: "Engineering Architecture", href: undefined },
+                    { name: "Product Architecture", href: undefined },
+                    { name: "Data & Intelligence", href: undefined },
+                    { name: "Experience Design", href: undefined }
                   ].map((item, idx) => (
-                    <li key={idx} id={item.id} className="flex items-center gap-2 scroll-mt-24">
+                    <li key={idx} className="flex items-center gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#CF5A30] shrink-0" />
-                      <span>{item.name}</span>
+                      {item.href ? (
+                        <Link href={item.href} className="hover:text-[#CF5A30] transition-colors">
+                          {item.name}
+                        </Link>
+                      ) : (
+                        <span>{item.name}</span>
+                      )}
                     </li>
                   ))}
                 </ul>

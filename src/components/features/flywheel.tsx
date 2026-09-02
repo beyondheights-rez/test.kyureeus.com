@@ -1,20 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
 import { 
-  Search, 
-  Lightbulb, 
-  Rocket, 
+  Compass, 
+  Cpu, 
+  Globe, 
   BarChart3, 
   Database, 
   Settings, 
   Users, 
-  Target
+  Target 
 } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 
-interface FlywheelSegment {
+export interface FlywheelSegment {
   id: string;
   number: string;
   title: string;
@@ -27,54 +26,54 @@ interface FlywheelSegment {
   badgeColor: string;
 }
 
-const FLYWHEEL_DATA: FlywheelSegment[] = [
+export const FLYWHEEL_DATA: FlywheelSegment[] = [
   {
     id: "real-problems",
     number: "01",
     title: "REAL PROBLEMS",
     description: "Identify systemic gaps & commercial pain points.",
     shortDesc: "Identify systemic gaps & commercial pain points",
-    icon: Search,
-    wedgeBg: "#F0FDF4",
-    hoverWedgeBg: "#DCFCE7",
+    icon: Compass,
+    wedgeBg: "#ECFDF5",
+    hoverWedgeBg: "#D1FAE5",
     textColor: "text-emerald-700",
     badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-400",
   },
   {
-    id: "build-valuable-solutions",
+    id: "valuable-solutions",
     number: "02",
     title: "BUILD VALUABLE SOLUTIONS",
-    description: "Design practical, user-centric apps.",
-    shortDesc: "Design practical, user-centric apps",
-    icon: Lightbulb,
-    wedgeBg: "#FFFBEB",
-    hoverWedgeBg: "#FEF3C7",
+    description: "Design practical AI-driven enterprise apps.",
+    shortDesc: "Design practical AI-driven enterprise apps",
+    icon: Cpu,
+    wedgeBg: "#FFF7ED",
+    hoverWedgeBg: "#FFEDD5",
     textColor: "text-amber-700",
     badgeColor: "bg-amber-100 text-amber-800 border-amber-400",
   },
   {
-    id: "deploy-them",
+    id: "deploy-world",
     number: "03",
     title: "DEPLOY THEM IN THE WORLD",
     description: "Ship production-ready code to environments.",
     shortDesc: "Ship production-ready code to environments",
-    icon: Rocket,
-    wedgeBg: "#FEF2F2",
-    hoverWedgeBg: "#FEE2E2",
-    textColor: "text-red-700",
-    badgeColor: "bg-red-100 text-red-800 border-red-400",
+    icon: Globe,
+    wedgeBg: "#FFF1F2",
+    hoverWedgeBg: "#FFE4E6",
+    textColor: "text-rose-700",
+    badgeColor: "bg-rose-100 text-rose-800 border-rose-400",
   },
   {
-    id: "produce-measurable-outcomes",
+    id: "measurable-outcomes",
     number: "04",
     title: "PRODUCE MEASURABLE OUTCOMES",
-    description: "Validate commercial value & business impact.",
-    shortDesc: "Validate commercial value & business impact",
+    description: "Validate commercial value and business impact.",
+    shortDesc: "Validate commercial value and business impact",
     icon: BarChart3,
-    wedgeBg: "#FAF5FF",
-    hoverWedgeBg: "#F3E8FF",
-    textColor: "text-purple-700",
-    badgeColor: "bg-purple-100 text-purple-800 border-purple-400",
+    wedgeBg: "#FDF4FF",
+    hoverWedgeBg: "#FAE8FF",
+    textColor: "text-fuchsia-700",
+    badgeColor: "bg-fuchsia-100 text-fuchsia-800 border-fuchsia-400",
   },
   {
     id: "capture-evidence",
@@ -127,8 +126,6 @@ const FLYWHEEL_DATA: FlywheelSegment[] = [
 ];
 
 export function Flywheel() {
-  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
-
   // SVG dimensions
   const size = 580;
   const center = size / 2;
@@ -175,26 +172,22 @@ export function Flywheel() {
         </svg>
       </div>
 
-      {/* 2. Interactive SVG Wedges with Pastel Fill Colors matching Image 2 */}
+      {/* 2. Static SVG Wedges with Pastel Fill Colors */}
       <svg 
         viewBox={`0 0 ${size} ${size}`} 
         className="w-full h-full drop-shadow-md"
       >
         <g>
           {FLYWHEEL_DATA.map((segment, idx) => {
-            const isHovered = hoveredIdx === idx;
             const path = getWedgePath(idx);
 
             return (
               <path
                 key={segment.id}
                 d={path}
-                fill={isHovered ? segment.hoverWedgeBg : segment.wedgeBg}
+                fill={segment.wedgeBg}
                 stroke="#1C1C1C"
                 strokeWidth="1.5"
-                className="cursor-pointer transition-colors duration-200"
-                onMouseEnter={() => setHoveredIdx(idx)}
-                onMouseLeave={() => setHoveredIdx(null)}
               />
             );
           })}
@@ -210,7 +203,6 @@ export function Flywheel() {
         const yPct = 50 + (labelR / (size / 2)) * 50 * Math.sin(angleRad);
 
         const IconComponent = segment.icon;
-        const isHovered = hoveredIdx === idx;
 
         return (
           <div
@@ -233,11 +225,8 @@ export function Flywheel() {
               {segment.number}
             </div>
 
-            {/* Circular Icon Container matching Image 2 */}
-            <div className={cn(
-              "flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-white border border-black/15 shadow-xs mb-0.5 transition-transform duration-200",
-              isHovered ? "scale-110" : ""
-            )}>
+            {/* Circular Icon Container */}
+            <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-white border border-black/15 shadow-xs mb-0.5">
               <IconComponent className={cn("h-4 w-4 sm:h-4.5 sm:w-4.5", segment.textColor)} />
             </div>
 
@@ -248,86 +237,31 @@ export function Flywheel() {
               {segment.title}
             </span>
 
-            {/* Stage Short Description */}
-            <span 
-              className="hidden mt-0.5 text-[7px] sm:text-[7.5px] leading-tight text-[#555555] max-w-[90px] md:block font-medium"
-            >
+            {/* Stage Description Subtitle */}
+            <p className="hidden xs:block mt-0.5 text-[7px] sm:text-[8px] text-[#555555] leading-tight line-clamp-2 px-1 font-sans">
               {segment.shortDesc}
-            </span>
+            </p>
           </div>
         );
       })}
 
-      {/* 4. Center System Core Dark Circle matching Image 2 */}
+      {/* 4. Center Circle Component */}
       <div 
-        style={{
-          width: `${(r / (size / 2)) * 100}%`,
-          height: `${(r / (size / 2)) * 100}%`,
-        }}
-        className="absolute rounded-full bg-[#121216] p-5 flex flex-col items-center justify-center text-center text-[#FFFFFF] shadow-2xl border-4 border-[#FFFFFF] pointer-events-none z-10"
+        className="absolute z-10 flex flex-col items-center justify-center rounded-full bg-[#1C1C1C] text-center text-white border-2 border-white shadow-xl w-[120px] h-[120px] xs:w-[145px] xs:h-[145px] sm:w-[170px] sm:h-[170px] md:w-[200px] md:h-[200px] p-2 sm:p-4"
       >
-        <AnimatePresence mode="wait">
-          {hoveredIdx === null ? (
-            <motion.div
-              key="default"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-              className="flex flex-col items-center justify-center h-full space-y-1.5"
-            >
-              {/* Red 4-Point Sparkle Star Logo */}
-              <div className="text-[#CF5A30]">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
-                  <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" />
-                </svg>
-              </div>
+        <span className="font-bebas text-[11px] sm:text-[13px] tracking-widest text-[#CF5A30] uppercase mb-0.5">
+          SYSTEM CORE
+        </span>
+        
+        <h4 className="font-bebas text-[10px] sm:text-[13px] md:text-[15px] leading-tight uppercase text-white font-bold max-w-[150px]">
+          BUILD PEOPLE WHO CAN BUILD ENTERPRISES
+        </h4>
 
-              <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] text-[#CF5A30] uppercase">
-                SYSTEM CORE
-              </span>
+        <div className="w-8 h-[1px] bg-white/20 my-1 sm:my-1.5" />
 
-              <h4 className="font-bebas text-sm sm:text-base leading-snug tracking-wide text-white uppercase max-w-[190px]">
-                BUILD PEOPLE WHO CAN CREATE, OPERATE AND COMPOUND INTELLIGENT ENTERPRISES.
-              </h4>
-
-              <span className="text-[8px] font-semibold tracking-widest text-gray-400 uppercase pt-1">
-                CONTINUOUS PROGRESSION
-              </span>
-            </motion.div>
-          ) : (
-            <motion.div
-              key={hoveredIdx}
-              initial={{ opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -4 }}
-              transition={{ duration: 0.15 }}
-              className="flex flex-col items-center justify-center h-full px-2"
-            >
-              {/* Hovered Stage Details */}
-              <div 
-                className={cn(
-                  "p-2 rounded-full mb-1 bg-white/10",
-                  FLYWHEEL_DATA[hoveredIdx].textColor
-                )}
-              >
-                {React.createElement(FLYWHEEL_DATA[hoveredIdx].icon, { className: "h-5 w-5" })}
-              </div>
-
-              <span className="text-[9px] font-extrabold tracking-widest text-gray-400">
-                STAGE {FLYWHEEL_DATA[hoveredIdx].number}
-              </span>
-
-              <h4 className={cn("font-bebas text-sm sm:text-base tracking-wider uppercase mt-0.5", FLYWHEEL_DATA[hoveredIdx].textColor)}>
-                {FLYWHEEL_DATA[hoveredIdx].title}
-              </h4>
-
-              <p className="text-[10px] leading-snug text-gray-200 mt-1 max-w-[180px] font-medium">
-                {FLYWHEEL_DATA[hoveredIdx].description}
-              </p>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <p className="text-[7.5px] sm:text-[9px] text-[#A1A1AA] font-semibold tracking-wider uppercase font-sans">
+          Continuous Progression
+        </p>
       </div>
 
     </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
 
 interface Segment {
@@ -13,66 +13,66 @@ interface Segment {
 
 const SEGMENTS: Segment[] = [
   {
-    title: "Real Problems from Enterprises",
-    themeColor: "#0ea5e9", // Teal/Sky Blue
-    bgColor: "#f0f9ff",     // Tint background
+    title: "Real Problems",
+    themeColor: "#059669", // Emerald Green
+    bgColor: "#ecfdf5",     // Tint background
     href: "/why-it-matters",
     icon: (
       <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+        <path d="M2 12h20" />
       </svg>
     )
   },
   {
-    title: "Capability Architectures",
-    themeColor: "#f97316", // Orange
-    bgColor: "#fff7ed",     // Tint background
+    title: "Active Architecture",
+    themeColor: "#d97706", // Amber
+    bgColor: "#fffbeb",     // Tint background
     href: "/capability-architecture",
     icon: (
       <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <circle cx="18" cy="5" r="3" />
-        <circle cx="6" cy="12" r="3" />
-        <circle cx="18" cy="19" r="3" />
-        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
       </svg>
     )
   },
   {
-    title: "Real Solutions Built",
-    themeColor: "#f43f5e", // Red/Coral
-    bgColor: "#fff1f2",     // Tint background
-    href: "/bootcamps",
+    title: "Adversarial Review",
+    themeColor: "#dc2626", // Red
+    bgColor: "#fef2f2",     // Tint background
+    href: "/bootcamps/cyber-security",
     icon: (
       <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <polyline points="16 18 22 12 16 6" />
-        <polyline points="8 6 2 12 8 18" />
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="m9 12 2 2 4-4" />
       </svg>
     )
   },
   {
-    title: "Measurable Evidence",
-    themeColor: "#8b5cf6", // Purple
+    title: "Production Deploy",
+    themeColor: "#7c3aed", // Violet
     bgColor: "#f5f3ff",     // Tint background
+    href: "/executive-learning-architecture",
+    icon: (
+      <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+        <path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5h20c0-2.31-1-4.24-2.5-5.5" />
+        <path d="M12 2L2 9l10 7 10-7Z" />
+        <line x1="12" y1="2" x2="12" y2="16" />
+      </svg>
+    )
+  },
+  {
+    title: "Evidence Generated",
+    themeColor: "#2563eb", // Blue
+    bgColor: "#eff6ff",     // Tint background
     href: "/how-we-teach",
     icon: (
       <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <line x1="18" y1="20" x2="18" y2="10" />
-        <line x1="12" y1="20" x2="12" y2="4" />
-        <line x1="6" y1="20" x2="6" y2="14" />
-      </svg>
-    )
-  },
-  {
-    title: "Enterprise Outcomes",
-    themeColor: "#2563eb", // Blue
-    bgColor: "#eff6ff",     // Tint background
-    href: "/why-it-matters",
-    icon: (
-      <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <path d="M23 6l-9.5 9.5-5-5L1 18" />
-        <polyline points="17 6 23 6 23 12" />
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+        <polyline points="10 9 9 9 8 9" />
       </svg>
     )
   },
@@ -94,7 +94,6 @@ const SEGMENTS: Segment[] = [
 
 export function WhyKyureeusFlywheel() {
   const router = useRouter();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const size = 800;
   const cx = size / 2;
@@ -114,7 +113,6 @@ export function WhyKyureeusFlywheel() {
   return (
     <div 
       className="relative w-full aspect-square max-w-[680px] qhd:max-w-[850px] uhd:max-w-[1100px] flex items-center justify-center select-none mx-auto"
-      onTouchStart={() => setHoveredIndex(null)}
     >
       <style>{`
         @keyframes spin-clockwise {
@@ -154,10 +152,9 @@ export function WhyKyureeusFlywheel() {
           })}
         </g>
 
-        {/* 2. Segments */}
+        {/* 2. Static Segments */}
         {SEGMENTS.map((seg, index) => {
-          // Mid angle of the segment (Top starts at -90 deg)
-          const midAngle = -90 + (index * anglePerSegment);
+          const midAngle = -90 + (index * anglePerSegment) + (anglePerSegment / 2);
           const startAngle = midAngle - (anglePerSegment / 2) + (gapDegrees / 2);
           const endAngle = midAngle + (anglePerSegment / 2) - (gapDegrees / 2);
 
@@ -189,18 +186,9 @@ export function WhyKyureeusFlywheel() {
           const yContent = cy + rMid * Math.sin(radMid);
 
           const contentW = 180;
-          const contentH = 135;
+          const contentH = 140;
           const xOffset = (xContent - contentW / 2).toFixed(3);
           const yOffset = (yContent - contentH / 2).toFixed(3);
-
-          const isHovered = hoveredIndex === index;
-          const pushDist = 12;
-          const tx = (Math.cos(radMid) * pushDist).toFixed(3);
-          const ty = (Math.sin(radMid) * pushDist).toFixed(3);
-
-          const transformStyle = isHovered
-            ? `translate(${tx}px, ${ty}px) scale(1.02)`
-            : "translate(0px, 0px) scale(1)";
 
           return (
             <g
@@ -208,62 +196,48 @@ export function WhyKyureeusFlywheel() {
               role="link"
               tabIndex={0}
               aria-label={`Navigate to ${seg.title}`}
-              className="cursor-pointer transition-all duration-400 ease-out outline-none"
+              className="cursor-pointer outline-none"
               style={{
-                transform: transformStyle,
+                transform: "translate(0px, 0px) scale(1)",
                 transformOrigin: `${cx}px ${cy}px`,
-                filter: isHovered
-                  ? "drop-shadow(0 15px 30px rgba(0,0,0,0.1))"
-                  : "drop-shadow(0 6px 12px rgba(0,0,0,0.04))"
+                filter: "drop-shadow(0 6px 15px rgba(0, 0, 0, 0.05))"
               }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
               onClick={() => handleNavigate(seg.href)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   handleNavigate(seg.href);
                 }
               }}
-              onTouchStart={(e) => {
-                e.stopPropagation();
-                setHoveredIndex(index);
-              }}
             >
+              {/* Segment background path */}
               <path
                 d={pathData}
-                className="transition-colors duration-300 stroke-none"
                 fill={seg.bgColor}
-                style={{
-                  filter: isHovered ? "brightness(0.97)" : "none"
-                }}
+                className="stroke-none"
               />
+
+              {/* Segment HTML Content */}
               <foreignObject
                 x={xOffset}
                 y={yOffset}
                 width={contentW}
                 height={contentH}
-                className="overflow-visible select-none pointer-events-none"
+                className="pointer-events-none"
               >
                 <div className="w-full h-full flex flex-col items-center justify-center text-center p-2">
+                  {/* Icon Circle Container */}
                   <div
-                    className="w-[52px] h-[52px] rounded-full flex items-center justify-center mb-3 bg-white transition-transform duration-300 ease-out shrink-0"
+                    className="w-12 h-12 rounded-full flex items-center justify-center mb-2 bg-white shadow-xs shrink-0"
                     style={{
-                      border: `2.5px solid ${seg.themeColor}`,
-                      transform: isHovered ? "scale(1.1)" : "scale(1)",
-                      boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)"
+                      border: `2px solid ${seg.themeColor}`,
+                      color: seg.themeColor
                     }}
                   >
-                    <div
-                      className="w-6 h-6 flex items-center justify-center"
-                      style={{
-                        stroke: seg.themeColor,
-                        fill: "none"
-                      }}
-                    >
-                      {seg.icon}
-                    </div>
+                    {seg.icon}
                   </div>
-                  <div className="font-outfit text-[13px] font-bold tracking-[0.03em] text-[#0f172a] leading-[1.35] uppercase max-w-[155px] text-center mx-auto">
+
+                  {/* Title */}
+                  <div className="font-outfit text-[12px] sm:text-[13px] font-bold tracking-wider text-[#0f172a] uppercase leading-tight px-1">
                     {seg.title}
                   </div>
                 </div>
@@ -272,54 +246,43 @@ export function WhyKyureeusFlywheel() {
           );
         })}
 
-        {/* 3. Center Circle (System Core) */}
+        {/* 3. Center Circle */}
         <g
           role="link"
           tabIndex={0}
-          aria-label="Navigate to Why Kyureeus"
-          className="cursor-pointer group outline-none"
-          onClick={() => handleNavigate("/whykyureeus")}
+          aria-label="Navigate to The Flywheel"
+          className="cursor-pointer outline-none"
+          onClick={() => handleNavigate("/the-flywheel")}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
-              handleNavigate("/whykyureeus");
+              handleNavigate("/the-flywheel");
             }
           }}
         >
           <circle
             cx={cx}
             cy={cy}
-            r={130}
-            className="fill-[#0a0e1a] stroke-white stroke-[3.5px] transition-all duration-300 group-hover:stroke-[#CF5A30] group-hover:scale-[1.02]"
+            r={125}
+            className="fill-[#0a0e1a] stroke-[#CF5A30] stroke-[3.5px]"
             style={{
               transformOrigin: `${cx}px ${cy}px`,
-              filter: "drop-shadow(0 10px 25px rgba(10, 14, 26, 0.25))"
+              filter: "drop-shadow(0 10px 20px rgba(10, 14, 26, 0.15))"
             }}
           />
+
           <foreignObject
-            x={cx - 130}
-            y={cy - 130}
-            width={260}
-            height={260}
-            className="overflow-visible select-none pointer-events-none"
+            x={cx - 125}
+            y={cy - 125}
+            width={250}
+            height={250}
+            className="pointer-events-none"
           >
-            <div className="w-full h-full flex flex-col items-center justify-center text-center p-5 text-white">
-              <div className="flex flex-col items-center mb-2.5">
-                {/* Custom Kyureeus 'K' Logo Shape */}
-                <svg className="w-9 h-9 mb-1.5 fill-white" viewBox="0 0 24 24">
-                  <path d="M6 3v18h3v-7.5l6 7.5h4l-7-8.75 6.5-9.25h-4l-5.5 7.75V3Z" />
-                </svg>
-                <div className="font-outfit text-[11.5px] font-bold tracking-[0.12em] text-white uppercase text-center">
-                  KYUREEUS
-                </div>
-                <div className="text-[8px] tracking-[0.08em] text-[#94a3b8] uppercase font-semibold mt-0.5 text-center">
-                  A Rezilyens Company
-                </div>
+            <div className="w-full h-full flex flex-col items-center justify-center text-center p-5">
+              <div className="font-outfit text-[14px] font-bold tracking-wider text-white uppercase leading-snug mb-1">
+                KYUREEUS ENGINE
               </div>
-              
-              <div className="w-10 h-[1px] bg-white/15 my-2.5 mx-auto" />
-              
-              <div className="font-outfit text-[13.5px] font-bold tracking-[0.05em] leading-[1.4] uppercase text-white max-w-[190px] text-center mx-auto">
-                CAPABILITY CREATES ENTERPRISE VALUE.
+              <div className="font-sans text-[10px] tracking-wide text-[#94a3b8] font-medium">
+                Continuous Capability Flywheel
               </div>
             </div>
           </foreignObject>

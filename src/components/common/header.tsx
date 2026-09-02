@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronDown, Menu, X, Layers, ShieldCheck, Cpu, Cloud } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu, X, Layers, ShieldCheck, Cpu, Cloud, Bot } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { Button } from "@/components/ui/button";
 
@@ -45,6 +45,12 @@ const NAV_ITEMS: NavItem[] = [
         href: "/bootcamps/cloud-platform",
         tagline: "Scalable cloud infra, distributed systems & Kubernetes",
         icon: Cloud,
+      },
+      {
+        label: "ROBOTICS ENGINEERING BOOTCAMP",
+        href: "/bootcamps/robotics-engineering",
+        tagline: "Autonomous systems, ROS 2, sensor fusion & physical AI",
+        icon: Bot,
       },
     ],
   },
