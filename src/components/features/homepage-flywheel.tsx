@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
 
 interface Segment {
@@ -129,7 +129,6 @@ const SEGMENTS: Segment[] = [
 
 export function HomepageFlywheel() {
   const router = useRouter();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const size = 800;
   const cx = size / 2;
@@ -149,7 +148,6 @@ export function HomepageFlywheel() {
   return (
     <div 
       className="relative w-full aspect-square max-w-[680px] qhd:max-w-[850px] uhd:max-w-[1100px] flex items-center justify-center select-none mx-auto"
-      onTouchStart={() => setHoveredIndex(null)}
     >
       <style>{`
         @keyframes spin-clockwise {
@@ -189,9 +187,8 @@ export function HomepageFlywheel() {
           })}
         </g>
 
-        {/* 2. Segments */}
+        {/* 2. Static Segments */}
         {SEGMENTS.map((seg, index) => {
-          // Mid angle of the segment (Top-Right-1 starts offset by half a segment)
           const midAngle = -90 + (index * anglePerSegment) + (anglePerSegment / 2);
           const startAngle = midAngle - (anglePerSegment / 2) + (gapDegrees / 2);
           const endAngle = midAngle + (anglePerSegment / 2) - (gapDegrees / 2);
@@ -228,49 +225,29 @@ export function HomepageFlywheel() {
           const xOffset = (xContent - contentW / 2).toFixed(3);
           const yOffset = (yContent - contentH / 2).toFixed(3);
 
-          const isHovered = hoveredIndex === index;
-          const pushDist = 12;
-          const tx = (Math.cos(radMid) * pushDist).toFixed(3);
-          const ty = (Math.sin(radMid) * pushDist).toFixed(3);
-
-          const transformStyle = isHovered
-            ? `translate(${tx}px, ${ty}px) scale(1.02)`
-            : "translate(0px, 0px) scale(1)";
-
           return (
             <g
               key={index}
               role="link"
               tabIndex={0}
               aria-label={`Navigate to ${seg.title}`}
-              className="cursor-pointer transition-all duration-400 ease-out outline-none"
+              className="cursor-pointer outline-none"
               style={{
-                transform: transformStyle,
+                transform: "translate(0px, 0px) scale(1)",
                 transformOrigin: `${cx}px ${cy}px`,
-                filter: isHovered
-                  ? "drop-shadow(0 15px 30px rgba(0,0,0,0.1))"
-                  : "drop-shadow(0 6px 12px rgba(0,0,0,0.04))"
+                filter: "drop-shadow(0 6px 12px rgba(0,0,0,0.04))"
               }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
               onClick={() => handleNavigate(seg.href)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   handleNavigate(seg.href);
                 }
               }}
-              onTouchStart={(e) => {
-                e.stopPropagation();
-                setHoveredIndex(index);
-              }}
             >
               <path
                 d={pathData}
-                className="transition-colors duration-300 stroke-none"
+                className="stroke-none"
                 fill={seg.bgColor}
-                style={{
-                  filter: isHovered ? "brightness(0.98)" : "none"
-                }}
               />
               <foreignObject
                 x={xOffset}
@@ -281,11 +258,9 @@ export function HomepageFlywheel() {
               >
                 <div className="w-full h-full flex flex-col items-center justify-center text-center p-1.5">
                   <div
-                    className="w-11 h-11 rounded-full flex items-center justify-center mb-2.5 bg-white transition-transform duration-300 ease-out"
+                    className="w-11 h-11 rounded-full flex items-center justify-center mb-2.5 bg-white shadow-2xs"
                     style={{
-                      border: `2px solid ${seg.themeColor}`,
-                      transform: isHovered ? "scale(1.1)" : "scale(1)",
-                      boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)"
+                      border: `2px solid ${seg.themeColor}`
                     }}
                   >
                     <div
@@ -315,7 +290,7 @@ export function HomepageFlywheel() {
           role="link"
           tabIndex={0}
           aria-label="Navigate to The Flywheel"
-          className="cursor-pointer group outline-none"
+          className="cursor-pointer outline-none"
           onClick={() => handleNavigate("/the-flywheel")}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
@@ -335,7 +310,7 @@ export function HomepageFlywheel() {
             cx={cx}
             cy={cy}
             r={140}
-            className="fill-[#0a0e1a] stroke-white stroke-[1.5px] transition-all duration-300 group-hover:stroke-[#d85d2b] group-hover:scale-[1.02]"
+            className="fill-[#0a0e1a] stroke-white stroke-[1.5px]"
             style={{
               transformOrigin: `${cx}px ${cy}px`,
               filter: "drop-shadow(0 10px 25px rgba(10, 14, 26, 0.25))"

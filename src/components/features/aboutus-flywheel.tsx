@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
 
 interface Segment {
@@ -95,13 +95,12 @@ const SEGMENTS: Segment[] = [
 
 export function AboutUsFlywheel() {
   const router = useRouter();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const size = 800;
   const cx = size / 2;
   const cy = size / 2;
 
-  const innerRadius = 142;
+  const innerRadius = 145;
   const outerRadius = 330;
   const outerRingRadius = 360;
   const numSegments = SEGMENTS.length;
@@ -114,8 +113,7 @@ export function AboutUsFlywheel() {
 
   return (
     <div 
-      className="relative w-full aspect-square max-w-[340px] sm:max-w-[460px] md:max-w-[560px] lg:max-w-[620px] xl:max-w-[680px] qhd:max-w-[850px] uhd:max-w-[1100px] flex items-center justify-center select-none mx-auto"
-      onTouchStart={() => setHoveredIndex(null)}
+      className="relative w-full aspect-square max-w-[680px] qhd:max-w-[850px] uhd:max-w-[1100px] flex items-center justify-center select-none mx-auto"
     >
       <style>{`
         @keyframes spin-clockwise {
@@ -155,10 +153,9 @@ export function AboutUsFlywheel() {
           })}
         </g>
 
-        {/* 2. Segments */}
+        {/* 2. Static Segments */}
         {SEGMENTS.map((seg, index) => {
-          // Mid angle of the segment (Top starts at -90 deg)
-          const midAngle = -90 + (index * anglePerSegment);
+          const midAngle = -90 + (index * anglePerSegment) + (anglePerSegment / 2);
           const startAngle = midAngle - (anglePerSegment / 2) + (gapDegrees / 2);
           const endAngle = midAngle + (anglePerSegment / 2) - (gapDegrees / 2);
 
@@ -185,21 +182,14 @@ export function AboutUsFlywheel() {
             `Z`
           ].join(" ");
 
-          // Content centroid precisely centered in wedge
           const rMid = 240;
           const xContent = cx + rMid * Math.cos(radMid);
           const yContent = cy + rMid * Math.sin(radMid);
 
-          const contentW = 210;
-          const contentH = 160;
-          const xOffset = xContent - contentW / 2;
-          const yOffset = yContent - contentH / 2;
-
-          // Radial push translation on hover
-          const pushDist = 14;
-          const tx = hoveredIndex === index ? Math.cos(radMid) * pushDist : 0;
-          const ty = hoveredIndex === index ? Math.sin(radMid) * pushDist : 0;
-          const isHovered = hoveredIndex === index;
+          const contentW = 190;
+          const contentH = 150;
+          const xOffset = (xContent - contentW / 2).toFixed(3);
+          const yOffset = (yContent - contentH / 2).toFixed(3);
 
           return (
             <g
@@ -207,33 +197,23 @@ export function AboutUsFlywheel() {
               role="link"
               tabIndex={0}
               aria-label={`Navigate to ${seg.title}`}
-              className="cursor-pointer transition-all duration-300 outline-none"
+              className="cursor-pointer outline-none"
               style={{
-                transform: `translate(${tx}px, ${ty}px) scale(${isHovered ? 1.02 : 1})`,
+                transform: "translate(0px, 0px) scale(1)",
                 transformOrigin: `${cx}px ${cy}px`,
-                filter: isHovered
-                  ? "drop-shadow(0 15px 35px rgba(0, 0, 0, 0.12))"
-                  : "drop-shadow(0 6px 15px rgba(0, 0, 0, 0.05))",
-                transition: "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s cubic-bezier(0.25, 1, 0.5, 1)"
+                filter: "drop-shadow(0 6px 15px rgba(0, 0, 0, 0.05))"
               }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
               onClick={() => handleNavigate(seg.href)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   handleNavigate(seg.href);
                 }
               }}
-              onTouchStart={(e) => {
-                e.stopPropagation();
-                setHoveredIndex(index);
-              }}
             >
               {/* Segment background path */}
               <path
                 d={pathData}
-                fill={isHovered ? "#fafafa" : "#ffffff"}
-                className="transition-colors duration-300"
+                fill="#ffffff"
               />
 
               {/* Segment HTML Content */}
@@ -247,11 +227,10 @@ export function AboutUsFlywheel() {
                 <div className="w-full h-full flex flex-col items-center justify-center text-center p-2">
                   {/* Icon Circle Container */}
                   <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center mb-2.5 bg-white transition-all duration-300 shadow-xs shrink-0"
+                    className="w-12 h-12 rounded-full flex items-center justify-center mb-2.5 bg-white shadow-xs shrink-0"
                     style={{
                       border: `2px solid ${seg.themeColor}`,
-                      color: seg.themeColor,
-                      transform: isHovered ? "scale(1.1)" : "scale(1)"
+                      color: seg.themeColor
                     }}
                   >
                     {seg.icon}
@@ -277,7 +256,7 @@ export function AboutUsFlywheel() {
           role="link"
           tabIndex={0}
           aria-label="Navigate to The Flywheel"
-          className="cursor-pointer group outline-none"
+          className="cursor-pointer outline-none"
           onClick={() => handleNavigate("/the-flywheel")}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
@@ -289,7 +268,7 @@ export function AboutUsFlywheel() {
             cx={cx}
             cy={cy}
             r={125}
-            className="fill-[#0a0e1a] stroke-[#f97316] stroke-[3.5px] transition-all duration-300 group-hover:stroke-white group-hover:scale-[1.02]"
+            className="fill-[#0a0e1a] stroke-[#f97316] stroke-[3.5px]"
             style={{
               transformOrigin: `${cx}px ${cy}px`,
               filter: "drop-shadow(0 10px 20px rgba(10, 14, 26, 0.15))"

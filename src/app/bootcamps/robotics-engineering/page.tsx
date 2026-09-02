@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { 
-  Cloud, 
+  Bot, 
   ArrowRight, 
   Check, 
   CheckCircle2, 
@@ -26,125 +26,125 @@ interface ModuleData {
 const MODULES: ModuleData[] = [
   {
     number: "01",
-    module: "Build the Foundation",
-    topics: "Programming • Python • Linux • Data Structures • Algorithms",
-    outcome: "Code that solves problems",
-    category: "Foundations"
+    module: "Build the Brain",
+    topics: "Programming • Linux • Python • C++ • Software Engineering",
+    outcome: "Software that controls machines",
+    category: "Brain & Core Software"
   },
   {
     number: "02",
-    module: "Data Engineering",
-    topics: "SQL • Data Modeling • ETL • Data Pipelines",
-    outcome: "Clean, reliable data systems",
-    category: "Data Systems"
+    module: "Build the Body",
+    topics: "CAD • Mechanical Design • Manufacturing • 3D Printing",
+    outcome: "Functional robotic platform",
+    category: "Mechanical & CAD"
   },
   {
     number: "03",
-    module: "Mathematics for AI",
-    topics: "Linear Algebra • Calculus • Statistics • Probability",
-    outcome: "Mathematical intuition",
-    category: "Math & Analytics"
+    module: "Build the Nervous System",
+    topics: "Electronics • Embedded Systems • Sensors • Actuators",
+    outcome: "Intelligent embedded controller",
+    category: "Embedded & Hardware"
   },
   {
     number: "04",
-    module: "Machine Learning",
-    topics: "Supervised • Unsupervised • Model Training",
-    outcome: "Trained ML models",
-    category: "Machine Learning"
+    module: "Build the Senses",
+    topics: "Sensor Fusion • Cameras • Signal Processing",
+    outcome: "Environmental perception",
+    category: "Perception & Sensing"
   },
   {
     number: "05",
-    module: "Deep Learning",
-    topics: "Neural Networks • Training • Optimization",
-    outcome: "Deep learning models",
-    category: "Deep Learning"
+    module: "Build Movement",
+    topics: "Motion Control • Kinematics • Robotic Dynamics",
+    outcome: "Autonomous mobility",
+    category: "Kinematics & Dynamics"
   },
   {
     number: "06",
-    module: "NLP Engineering",
-    topics: "Text Processing • Embeddings • Transformers",
-    outcome: "Language understanding",
-    category: "NLP & Transformers"
+    module: "Connect Intelligence",
+    topics: "IoT • Networking • Industrial Communication",
+    outcome: "Connected robotic systems",
+    category: "IoT & Industrial Comms"
   },
   {
     number: "07",
-    module: "Generative AI",
-    topics: "LLMs • Prompt Engineering • RAG • Fine-tuning",
-    outcome: "Generative AI systems",
-    category: "Generative AI"
+    module: "Coordinate Everything",
+    topics: "ROS 2 • Middleware • Distributed Robotics",
+    outcome: "Modular robotic architecture",
+    category: "ROS 2 & Middleware"
   },
   {
     number: "08",
-    module: "AI Agents & Automation",
-    topics: "Agents • Tools • Memory • Planning",
-    outcome: "Autonomous AI agents",
-    category: "Autonomous Agents"
+    module: "Build Before You Build",
+    topics: "Gazebo • RViz2 • Digital Twins • Simulation",
+    outcome: "Complete virtual robot",
+    category: "Digital Twins & Simulation"
   },
   {
     number: "09",
-    module: "MLOps & Infrastructure",
-    topics: "Versioning • CI/CD • Deployment • Monitoring",
-    outcome: "Production-ready ML systems",
-    category: "MLOps & Infra"
+    module: "Understand Space",
+    topics: "SLAM • Localization • Mapping",
+    outcome: "Spatial awareness",
+    category: "SLAM & Spatial Mapping"
   },
   {
     number: "10",
-    module: "Evaluation & Observability",
-    topics: "Metrics • Testing • Bias • Explainability",
-    outcome: "Trustworthy AI systems",
-    category: "Observability"
+    module: "Navigate the World",
+    topics: "Navigation • Path Planning • Obstacle Avoidance",
+    outcome: "Autonomous navigation",
+    category: "Autonomous Navigation"
   },
   {
     number: "11",
-    module: "AI System Design",
-    topics: "Architecture • Patterns • Scalability",
-    outcome: "Scalable intelligent systems",
-    category: "System Design"
+    module: "Understand Vision",
+    topics: "OpenCV • Depth Vision • Computer Vision",
+    outcome: "Intelligent perception",
+    category: "Computer Vision"
   },
   {
     number: "12",
-    module: "Multimodal AI",
-    topics: "Vision • Audio • Video • Multimodal Models",
-    outcome: "Multimodal understanding",
-    category: "Multimodal"
+    module: "Make Decisions",
+    topics: "Artificial Intelligence • Edge AI • Machine Learning",
+    outcome: "Autonomous decision making",
+    category: "Edge AI & Intelligence"
   },
   {
     number: "13",
-    module: "AI Product Engineering",
-    topics: "Product Thinking • APIs • Integrations",
-    outcome: "Real-world AI products",
-    category: "Product Engineering"
+    module: "Engineer Reliability",
+    topics: "RTOS • Safety • Diagnostics • Cybersecurity",
+    outcome: "Industrial robotics platform",
+    category: "RTOS & Systems Safety"
   },
   {
     number: "14",
-    module: "Reliability & Safety",
-    topics: "Guardrails • Security • Privacy • Compliance",
-    outcome: "Responsible AI systems",
-    category: "Safety & Governance"
+    module: "Engineer Products",
+    topics: "Systems Engineering • Validation • Manufacturing",
+    outcome: "Commercial robotics product",
+    category: "Systems Engineering"
   },
   {
     number: "15",
-    module: "Industry Projects",
-    topics: "End-to-End AI Solutions • Live Problems",
-    outcome: "Professional experience",
-    category: "Applied Industry"
+    module: "Engineer with Industry",
+    topics: "Live Product Development",
+    outcome: "Professional engineering experience",
+    category: "Industry Capstone"
   },
   {
     number: "16",
-    module: "AI Innovation",
-    topics: "Research • Experimentation • Entrepreneurship",
-    outcome: "Original AI innovation",
-    category: "Innovation & Research"
+    module: "Engineer the Future",
+    topics: "Innovation • Research • Entrepreneurship",
+    outcome: "Original robotics innovation",
+    category: "Frontier & Innovation"
   }
 ];
 
-export default function CloudPlatformBootcampPage() {
+export default function RoboticsEngineeringBootcampPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     organization: "",
-    interest: "Cloud & Platform Engineering Bootcamp",
+    interest: "Robotics Engineering Bootcamp",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -170,7 +170,7 @@ export default function CloudPlatformBootcampPage() {
           phone: formData.phone,
           organization: formData.organization,
           program: formData.interest,
-          message: formData.message || "Enquiry for Cloud & Platform Engineering Bootcamp details",
+          message: formData.message || "Enquiry for Robotics Engineering Bootcamp details",
         }),
       });
 
@@ -183,7 +183,7 @@ export default function CloudPlatformBootcampPage() {
           email: "",
           phone: "",
           organization: "",
-          interest: "Cloud & Platform Engineering Bootcamp",
+          interest: "Robotics Engineering Bootcamp",
           message: ""
         });
       } else {
@@ -213,7 +213,7 @@ export default function CloudPlatformBootcampPage() {
               Bootcamps
             </Link>
             <span>/</span>
-            <span className="text-[#CF5A30] font-bold">Cloud &amp; Platform Engineering</span>
+            <span className="text-[#CF5A30] font-bold">Robotics Engineering</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -223,32 +223,32 @@ export default function CloudPlatformBootcampPage() {
               
               {/* Badge */}
               <div className="inline-flex items-center gap-2 rounded-md border border-[#CF5A30]/40 bg-[#CF5A30]/10 px-3.5 py-1.5 text-xs font-black tracking-widest text-[#CF5A30] uppercase font-sans">
-                <Cloud className="w-3.5 h-3.5" />
+                <Bot className="w-3.5 h-3.5" />
                 ENTERPRISE BOOTCAMP
               </div>
 
               {/* Title */}
               <h1 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-[68px] leading-[1.02] tracking-wide uppercase text-[#121212]">
-                CLOUD &amp; PLATFORM <br />
-                <span className="text-[#CF5A30]">ENGINEERING BOOTCAMP.</span>
+                ROBOTICS ENGINEERING <br />
+                <span className="text-[#CF5A30]">BOOTCAMP.</span>
               </h1>
 
               {/* Tagline Paragraphs */}
               <p className="font-sans text-base sm:text-lg md:text-[20px] leading-relaxed text-[#121212] font-semibold">
-                Design, build, and deploy production-grade intelligent systems and scalable platforms.
+                Design, build, simulate, and deploy autonomous robotic platforms and physical AI systems from the ground up.
               </p>
 
               <p className="font-sans text-[14.5px] sm:text-base leading-relaxed text-[#555555] max-w-2xl">
-                Go beyond introductory tutorials. Learn to build complete, reliable, production-ready AI systems and scalable cloud platforms from the ground up through 16 hands-on engineering modules.
+                True robotics engineering bridges physical dynamics, embedded electronics, real-time middleware (ROS 2), computer vision, and edge intelligence. This intensive 16-module program takes you from raw C++/Linux controllers and CAD mechanics to autonomous SLAM navigation, digital twin simulation, and industrial deployment.
               </p>
 
               {/* Highlights Pill Matrix */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
                 {[
                   { label: "16 Modules", sub: "5 Preview / 11 Locked" },
-                  { label: "GenAI & Agents", sub: "Autonomous systems" },
-                  { label: "MLOps & Scale", sub: "Production deployment" },
-                  { label: "Live Solutions", sub: "Industry projects" }
+                  { label: "ROS 2 & Gazebo", sub: "Distributed Control" },
+                  { label: "SLAM & Vision", sub: "Spatial Autonomy" },
+                  { label: "Physical AI", sub: "Hardware & Edge ML" }
                 ].map((stat, i) => (
                   <div key={i} className="p-3 bg-white/80 rounded-lg border border-[#121212]/10 shadow-2xs">
                     <div className="font-bebas text-lg sm:text-xl text-[#121212] tracking-wide">{stat.label}</div>
@@ -283,22 +283,22 @@ export default function CloudPlatformBootcampPage() {
                 
                 <div className="flex items-center gap-3">
                   <div className="h-12 w-12 rounded-xl bg-[#CF5A30] text-white flex items-center justify-center shrink-0 shadow-md">
-                    <Cloud className="h-6 w-6" />
+                    <Bot className="h-6 w-6" />
                   </div>
                   <div>
                     <h2 className="font-bebas text-xl text-[#121212] uppercase tracking-wide">WHAT YOU BECOME</h2>
-                    <p className="font-sans text-xs text-[#666666]">Intelligent Systems &amp; Platform Engineer</p>
+                    <p className="font-sans text-xs text-[#666666]">Autonomous Systems &amp; Robotics Engineer</p>
                   </div>
                 </div>
 
                 <div className="space-y-3 font-sans text-xs sm:text-[13.5px] text-[#333333]">
                   {[
-                    "Build data ingestion pipelines, feature stores, and ETL systems",
-                    "Train and fine-tune deep neural networks and custom transformer models",
-                    "Deploy LLMs with retrieval-augmented generation (RAG) architectures",
-                    "Design autonomous multi-agent systems with tool use and memory",
-                    "Automate model lifecycle with CI/CD and production MLOps pipelines",
-                    "Implement guardrails, observability, and compliance for responsible AI"
+                    "Architect modular robotics software with ROS 2, C++, and Python",
+                    "Design custom chassis, kinematics, and embedded actuator systems",
+                    "Build sensor fusion pipelines across LiDAR, cameras & IMUs",
+                    "Simulate physics-accurate digital twins with Gazebo & RViz2",
+                    "Implement real-time SLAM, Nav2 path planning & obstacle avoidance",
+                    "Deploy Edge AI computer vision models for object manipulation & navigation"
                   ].map((feat, idx) => (
                     <div key={idx} className="flex items-start gap-2.5">
                       <div className="h-4 w-4 rounded-full bg-[#CF5A30]/15 text-[#CF5A30] flex items-center justify-center shrink-0 mt-0.5">
@@ -312,7 +312,7 @@ export default function CloudPlatformBootcampPage() {
                 <div className="p-4 rounded-xl bg-[#FAF8F3] border border-[#121212]/10 space-y-1.5">
                   <div className="font-bebas text-sm uppercase text-[#CF5A30] tracking-wider">COHORT FORMAT</div>
                   <p className="font-sans text-xs text-[#555555] leading-relaxed">
-                    Interactive engineering labs, live architecture reviews, production deployments, and direct mentorship from platform architects.
+                    Hardware design labs, real-time Linux sandboxes, simulation-first digital twins, physical robot builds, and mentorship from robotics research engineers.
                   </p>
                 </div>
               </div>
@@ -337,7 +337,7 @@ export default function CloudPlatformBootcampPage() {
               </div>
               
               <h2 className="font-bebas text-3xl sm:text-4xl md:text-[46px] tracking-wide text-[#121212] uppercase leading-[1.05]">
-                16 MODULES. FROM FOUNDATIONS TO APPLIED INNOVATION.
+                16 MODULES. FROM CORE BRAIN TO AUTONOMOUS MOBILITY.
               </h2>
               
               <p className="font-sans text-[14.5px] sm:text-base leading-relaxed text-[#555555]">
@@ -524,7 +524,7 @@ export default function CloudPlatformBootcampPage() {
               </h2>
 
               <p className="font-sans text-[14.5px] sm:text-base leading-relaxed text-[#555555]">
-                Submit your information to connect with our academic admissions team. We will contact you as soon as possible to provide the full 16-module curriculum, intelligent architecture lab guides, and corporate cohort schedules.
+                Submit your information to connect with our academic admissions team. We will contact you as soon as possible to provide the full 16-module curriculum, hardware lab specifications, and cohort schedules.
               </p>
 
               <div className="space-y-3 pt-2">
@@ -541,10 +541,10 @@ export default function CloudPlatformBootcampPage() {
                 <div className="p-4 rounded-xl bg-white border border-[#121212]/10 space-y-2">
                   <div className="flex items-center gap-2 text-xs font-bold text-[#121212] uppercase tracking-wider font-sans">
                     <Building2 className="w-4 h-4 text-[#CF5A30]" />
-                    For Enterprise Engineering Teams
+                    For Enterprise &amp; Academic Cohorts
                   </div>
                   <p className="font-sans text-xs text-[#666666] leading-relaxed">
-                    Custom cohort tracks for engineering teams moving into scalable AI architectures, model serving, and distributed systems.
+                    Custom tracks available for engineering teams and universities moving into physical AI and mobile robotics.
                   </p>
                 </div>
               </div>
@@ -557,7 +557,7 @@ export default function CloudPlatformBootcampPage() {
                 
                 <div className="border-b border-[#121212]/10 pb-4">
                   <h3 className="font-bebas text-2xl sm:text-3xl text-[#121212] uppercase tracking-wide">
-                    CLOUD &amp; PLATFORM BOOTCAMP ENQUIRY
+                    ROBOTICS BOOTCAMP ENQUIRY
                   </h3>
                   <p className="font-sans text-xs sm:text-sm text-[#666666] mt-1">
                     Fill out the form below and our team will contact you as soon as possible.
@@ -574,7 +574,7 @@ export default function CloudPlatformBootcampPage() {
                         Enquiry Received Successfully!
                       </h4>
                       <p className="font-sans text-sm text-[#555555] max-w-md mx-auto leading-relaxed">
-                        Thank you for your interest in the Cloud &amp; Platform Engineering Bootcamp. <strong>Our admissions team will contact you as soon as possible</strong> with the complete syllabus, admission guidelines, and cohort schedule.
+                        Thank you for your interest in the Robotics Engineering Bootcamp. <strong>Our admissions team will contact you as soon as possible</strong> with the complete syllabus, admission guidelines, and cohort schedule.
                       </p>
                     </div>
 
@@ -647,7 +647,7 @@ export default function CloudPlatformBootcampPage() {
                           type="text"
                           value={formData.organization}
                           onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                          placeholder="e.g. TechCorp / Platform Team"
+                          placeholder="e.g. TechCorp / Robotics Lab"
                           className="w-full px-3.5 py-2.5 rounded-lg border border-[#121212]/20 focus:border-[#CF5A30] focus:ring-1 focus:ring-[#CF5A30] outline-none transition-colors"
                         />
                       </div>
@@ -661,7 +661,7 @@ export default function CloudPlatformBootcampPage() {
                         rows={3}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        placeholder="Tell us about your background (e.g. software engineer, data scientist, platform architect) and what you aim to build..."
+                        placeholder="Tell us about your background (e.g. C++/Python, ROS, hardware experience) and what you aim to build..."
                         className="w-full px-3.5 py-2.5 rounded-lg border border-[#121212]/20 focus:border-[#CF5A30] focus:ring-1 focus:ring-[#CF5A30] outline-none transition-colors resize-none"
                       />
                     </div>
@@ -705,14 +705,9 @@ export default function CloudPlatformBootcampPage() {
             COMPARE WITH OTHER CAPABILITY TRACKS
           </h2>
           <p className="font-sans text-xs sm:text-sm text-[#A1A1AA] max-w-xl mx-auto">
-            Discover our full portfolio across Robotics, Cyber Security, and AI Engineering Architectures.
+            Discover our full portfolio across Cyber Security, AI Engineering, and Cloud &amp; Platform Architectures.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
-            <Link href="/bootcamps/robotics-engineering">
-              <Button variant="outline" className="border-white/20 bg-white/5 hover:bg-white text-white hover:text-[#121212] text-xs font-bold uppercase tracking-wider">
-                ROBOTICS ENGINEERING
-              </Button>
-            </Link>
             <Link href="/bootcamps/cyber-security">
               <Button variant="outline" className="border-white/20 bg-white/5 hover:bg-white text-white hover:text-[#121212] text-xs font-bold uppercase tracking-wider">
                 CYBER SECURITY
@@ -721,6 +716,11 @@ export default function CloudPlatformBootcampPage() {
             <Link href="/bootcamps/ai-engineering">
               <Button variant="outline" className="border-white/20 bg-white/5 hover:bg-white text-white hover:text-[#121212] text-xs font-bold uppercase tracking-wider">
                 AI ENGINEERING
+              </Button>
+            </Link>
+            <Link href="/bootcamps/cloud-platform">
+              <Button variant="outline" className="border-white/20 bg-white/5 hover:bg-white text-white hover:text-[#121212] text-xs font-bold uppercase tracking-wider">
+                CLOUD &amp; PLATFORM
               </Button>
             </Link>
             <Link href="/bootcamps">

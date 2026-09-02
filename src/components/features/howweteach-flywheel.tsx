@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
 
 interface Segment {
   title: string;
+  description: string;
   themeColor: string;
   bgColor: string;
   href: string;
@@ -13,72 +14,80 @@ interface Segment {
 
 const SEGMENTS: Segment[] = [
   {
-    title: "UNDERSTAND",
-    themeColor: "#137333", // Green
-    bgColor: "#E6F4EA",     // Tint background
+    title: "1. Real World Problems",
+    description: "Every module begins with an authentic, complex challenge from modern business.",
+    themeColor: "#059669", // Emerald Green
+    bgColor: "#E8F5E9",     // Tint background
     href: "/why-it-matters",
     icon: (
       <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1 0-3.12 3 3 0 0 1 0-4.88 2.5 2.5 0 0 1 0-3.12A2.5 2.5 0 0 1 9.5 2z" />
-        <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 0-3.12 3 3 0 0 0 0-4.88 2.5 2.5 0 0 0 0-3.12A2.5 2.5 0 0 0 14.5 2z" />
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+        <path d="M2 12h20" />
       </svg>
     )
   },
   {
-    title: "DESIGN",
-    themeColor: "#C45100", // Orange
-    bgColor: "#FDF2E9",     // Tint background
+    title: "2. Active Architecture",
+    description: "Design and implement working systems instead of passive lectures.",
+    themeColor: "#D97706", // Amber
+    bgColor: "#FFF3E0",     // Tint background
     href: "/capability-architecture",
     icon: (
       <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <path d="m12 19-7-7 3.86-3.86a6 6 0 0 1 8.49 8.49L12 19Z" />
-        <path d="m9 11 4 4" />
-        <path d="m5 19 3-3" />
-        <path d="m14 4 6 6" />
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
       </svg>
     )
   },
   {
-    title: "BUILD",
-    themeColor: "#C5221F", // Red
-    bgColor: "#FCE8E6",     // Tint background
-    href: "/bootcamps",
+    title: "3. Red-Team Review",
+    description: "Stress-test systems through rigorous adversarial inspection.",
+    themeColor: "#DC2626", // Red
+    bgColor: "#FFEBEE",     // Tint background
+    href: "/bootcamps/cyber-security",
     icon: (
       <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <rect x="4" y="4" width="16" height="16" rx="2" />
-        <rect x="9" y="9" width="6" height="6" />
-        <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3" />
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="m9 12 2 2 4-4" />
       </svg>
     )
   },
   {
-    title: "IMPROVE",
-    themeColor: "#7B1FA2", // Purple
-    bgColor: "#F3E8FD",     // Tint background
-    href: "/the-flywheel",
-    icon: (
-      <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-      </svg>
-    )
-  },
-  {
-    title: "DEPLOY",
-    themeColor: "#3F51B5", // Indigo/Blue
-    bgColor: "#E8EAF6",     // Tint background
+    title: "4. Deployment",
+    description: "Ship working solutions to real staging environments.",
+    themeColor: "#9333EA", // Purple
+    bgColor: "#F3E5F5",     // Tint background
     href: "/executive-learning-architecture",
     icon: (
       <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 8.58" />
-        <path d="m13 11-4 6h3l-3 5 7-7h-3z" />
+        <path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5h20c0-2.31-1-4.24-2.5-5.5" />
+        <path d="M12 2L2 9l10 7 10-7Z" />
+        <line x1="12" y1="2" x2="12" y2="16" />
       </svg>
     )
   },
   {
-    title: "REPEAT",
-    themeColor: "#827717", // Olive
+    title: "5. Evidence Capture",
+    description: "Generate verifiable technical artifacts, not just certificates.",
+    themeColor: "#2563EB", // Blue
+    bgColor: "#E3F2FD",     // Tint background
+    href: "/whykyureeus",
+    icon: (
+      <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+        <polyline points="10 9 9 9 8 9" />
+      </svg>
+    )
+  },
+  {
+    title: "6. Compounding Loop",
+    description: "Every iteration builds momentum and unlocks higher-tier capability.",
+    themeColor: "#65A30D", // Lime/Olive
     bgColor: "#F9F9E0",     // Tint background
-    href: "/how-we-teach",
+    href: "/the-flywheel",
     icon: (
       <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
         <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
@@ -92,7 +101,6 @@ const SEGMENTS: Segment[] = [
 
 export function HowWeTeachFlywheel() {
   const router = useRouter();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const size = 800;
   const cx = size / 2;
@@ -112,7 +120,6 @@ export function HowWeTeachFlywheel() {
   return (
     <div 
       className="relative w-full aspect-square max-w-[680px] qhd:max-w-[850px] uhd:max-w-[1100px] flex items-center justify-center select-none mx-auto"
-      onTouchStart={() => setHoveredIndex(null)}
     >
       <style>{`
         @keyframes spin-clockwise {
@@ -152,10 +159,9 @@ export function HowWeTeachFlywheel() {
           })}
         </g>
 
-        {/* 2. Segments */}
+        {/* 2. Static Segments */}
         {SEGMENTS.map((seg, index) => {
-          // Mid angle of the segment (Top starts at -90 deg)
-          const midAngle = -90 + (index * anglePerSegment);
+          const midAngle = -90 + (index * anglePerSegment) + (anglePerSegment / 2);
           const startAngle = midAngle - (anglePerSegment / 2) + (gapDegrees / 2);
           const endAngle = midAngle + (anglePerSegment / 2) - (gapDegrees / 2);
 
@@ -186,19 +192,10 @@ export function HowWeTeachFlywheel() {
           const xContent = cx + rMid * Math.cos(radMid);
           const yContent = cy + rMid * Math.sin(radMid);
 
-          const contentW = 180;
-          const contentH = 135;
+          const contentW = 190;
+          const contentH = 150;
           const xOffset = (xContent - contentW / 2).toFixed(3);
           const yOffset = (yContent - contentH / 2).toFixed(3);
-
-          const isHovered = hoveredIndex === index;
-          const pushDist = 12;
-          const tx = (Math.cos(radMid) * pushDist).toFixed(3);
-          const ty = (Math.sin(radMid) * pushDist).toFixed(3);
-
-          const transformStyle = isHovered
-            ? `translate(${tx}px, ${ty}px) scale(1.02)`
-            : "translate(0px, 0px) scale(1)";
 
           return (
             <g
@@ -206,63 +203,54 @@ export function HowWeTeachFlywheel() {
               role="link"
               tabIndex={0}
               aria-label={`Navigate to ${seg.title}`}
-              className="cursor-pointer transition-all duration-400 ease-out outline-none"
+              className="cursor-pointer outline-none"
               style={{
-                transform: transformStyle,
+                transform: "translate(0px, 0px) scale(1)",
                 transformOrigin: `${cx}px ${cy}px`,
-                filter: isHovered
-                  ? "drop-shadow(0 15px 30px rgba(0,0,0,0.1))"
-                  : "drop-shadow(0 6px 12px rgba(0,0,0,0.04))"
+                filter: "drop-shadow(0 6px 15px rgba(0, 0, 0, 0.05))"
               }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
               onClick={() => handleNavigate(seg.href)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   handleNavigate(seg.href);
                 }
               }}
-              onTouchStart={(e) => {
-                e.stopPropagation();
-                setHoveredIndex(index);
-              }}
             >
+              {/* Segment background path */}
               <path
                 d={pathData}
-                className="transition-colors duration-300 stroke-none"
                 fill={seg.bgColor}
-                style={{
-                  filter: isHovered ? "brightness(0.97)" : "none"
-                }}
+                className="stroke-none"
               />
+
+              {/* Segment HTML Content */}
               <foreignObject
                 x={xOffset}
                 y={yOffset}
                 width={contentW}
                 height={contentH}
-                className="overflow-visible select-none pointer-events-none"
+                className="pointer-events-none"
               >
                 <div className="w-full h-full flex flex-col items-center justify-center text-center p-2">
+                  {/* Icon Circle Container */}
                   <div
-                    className="w-[52px] h-[52px] rounded-full flex items-center justify-center mb-3 bg-white transition-transform duration-300 ease-out shrink-0"
+                    className="w-12 h-12 rounded-full flex items-center justify-center mb-2 bg-white shadow-xs shrink-0"
                     style={{
-                      border: `2.5px solid ${seg.themeColor}`,
-                      transform: isHovered ? "scale(1.1)" : "scale(1)",
-                      boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)"
+                      border: `2px solid ${seg.themeColor}`,
+                      color: seg.themeColor
                     }}
                   >
-                    <div
-                      className="w-6 h-6 flex items-center justify-center"
-                      style={{
-                        stroke: seg.themeColor,
-                        fill: "none"
-                      }}
-                    >
-                      {seg.icon}
-                    </div>
+                    {seg.icon}
                   </div>
-                  <div className="font-outfit text-[13px] font-bold tracking-[0.03em] text-[#0f172a] leading-[1.35] uppercase max-w-[155px] text-center mx-auto">
+
+                  {/* Title */}
+                  <div className="font-outfit text-[11px] sm:text-[11.5px] font-bold tracking-wider text-[#0f172a] uppercase leading-tight mb-1 px-1">
                     {seg.title}
+                  </div>
+
+                  {/* Description */}
+                  <div className="font-sans text-[9px] sm:text-[9.5px] leading-snug text-[#64748b] max-w-[170px] font-normal">
+                    {seg.description}
                   </div>
                 </div>
               </foreignObject>
@@ -270,54 +258,43 @@ export function HowWeTeachFlywheel() {
           );
         })}
 
-        {/* 3. Center Circle (System Core) */}
+        {/* 3. Center Circle */}
         <g
           role="link"
           tabIndex={0}
-          aria-label="Navigate to How We Teach"
-          className="cursor-pointer group outline-none"
-          onClick={() => handleNavigate("/how-we-teach")}
+          aria-label="Navigate to The Flywheel"
+          className="cursor-pointer outline-none"
+          onClick={() => handleNavigate("/the-flywheel")}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
-              handleNavigate("/how-we-teach");
+              handleNavigate("/the-flywheel");
             }
           }}
         >
           <circle
             cx={cx}
             cy={cy}
-            r={130}
-            className="fill-[#0a0e1a] stroke-white stroke-[3.5px] transition-all duration-300 group-hover:stroke-[#CF5A30] group-hover:scale-[1.02]"
+            r={125}
+            className="fill-[#0a0e1a] stroke-[#CF5A30] stroke-[3.5px]"
             style={{
               transformOrigin: `${cx}px ${cy}px`,
-              filter: "drop-shadow(0 10px 25px rgba(10, 14, 26, 0.25))"
+              filter: "drop-shadow(0 10px 20px rgba(10, 14, 26, 0.15))"
             }}
           />
+
           <foreignObject
-            x={cx - 130}
-            y={cy - 130}
-            width={260}
-            height={260}
-            className="overflow-visible select-none pointer-events-none"
+            x={cx - 125}
+            y={cy - 125}
+            width={250}
+            height={250}
+            className="pointer-events-none"
           >
-            <div className="w-full h-full flex flex-col items-center justify-center text-center p-5 text-white">
-              <div className="flex flex-col items-center mb-2.5">
-                {/* Custom Kyureeus 'K' Logo Shape */}
-                <svg className="w-9 h-9 mb-1.5 fill-white" viewBox="0 0 24 24">
-                  <path d="M6 3v18h3v-7.5l6 7.5h4l-7-8.75 6.5-9.25h-4l-5.5 7.75V3Z" />
-                </svg>
-                <div className="font-outfit text-[11.5px] font-bold tracking-[0.12em] text-white uppercase text-center">
-                  KYUREEUS
-                </div>
-                <div className="text-[8px] tracking-[0.08em] text-[#94a3b8] uppercase font-semibold mt-0.5 text-center">
-                  A Rezilyens Company
-                </div>
+            <div className="w-full h-full flex flex-col items-center justify-center text-center p-5">
+              <div className="font-outfit text-[14px] font-bold tracking-wider text-white uppercase leading-snug mb-1">
+                THE LEARNING LOOP
               </div>
-              
-              <div className="w-10 h-[1px] bg-white/15 my-2.5 mx-auto" />
-              
-              <div className="font-outfit text-[13.5px] font-bold tracking-[0.05em] leading-[1.4] uppercase text-white max-w-[190px] text-center mx-auto">
-                BUILDING PEOPLE WHO BUILD THE FUTURE
+              <div className="font-sans text-[10px] tracking-wide text-[#94a3b8] font-medium">
+                Six Integrated Stages
               </div>
             </div>
           </foreignObject>
