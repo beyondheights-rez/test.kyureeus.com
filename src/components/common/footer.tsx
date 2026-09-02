@@ -12,7 +12,7 @@ export function Footer() {
 
   return (
     <footer className="w-full flex flex-col">
-      
+
       {/* Optional Top Dark CTA Banner (shown on Home Page) */}
       {!hideCtaBanner && (
         <div className="bg-[#1C1C1E] text-[#F5F2EB] py-14 sm:py-16 md:py-20 qhd:py-32 uhd:py-44 px-4 sm:px-6 md:px-12 text-center flex flex-col items-center justify-center space-y-6 sm:space-y-8 qhd:space-y-12 border-b border-[#121212]">
@@ -32,7 +32,7 @@ export function Footer() {
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Button>
             </Link>
-            
+
             <Link href="/contact" className="w-full sm:w-auto">
               <Button className="w-full sm:w-auto flex items-center justify-center rounded-[4px] bg-white hover:bg-[#F5F2EB] text-[#121212] px-6 py-5 sm:py-6 qhd:px-8 qhd:py-8 qhd:text-sm uhd:px-11 uhd:py-10 uhd:text-base font-bold tracking-widest uppercase transition-colors min-h-[48px]">
                 CONTACT ENTERPRISE
@@ -45,10 +45,10 @@ export function Footer() {
       {/* Main Footer Directory Section */}
       <div className="bg-[#F8F8F9] text-[#121212] py-12 sm:py-16 md:py-20 qhd:py-28 uhd:py-36 px-4 sm:px-6 md:px-12 lg:px-24 qhd:px-32 uhd:px-44">
         <div className="mx-auto max-w-7xl fhd:max-w-[1500px] qhd:max-w-[2000px] uhd:max-w-[3000px] w-full space-y-10 sm:space-y-12 md:space-y-16 qhd:space-y-24">
-          
+
           {/* Main Footer Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-start">
-            
+
             {/* Left Brand & Social Column */}
             <div className="flex flex-col items-start space-y-4 sm:space-y-5 md:col-span-2 lg:col-span-5 qhd:space-y-8">
               {/* Brand Header / Logo */}
@@ -73,7 +73,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="bg-white hover:bg-gray-50 text-[#333333] hover:text-[#CF5A30] px-4 py-2 qhd:px-6 qhd:py-2.5 text-[12px] qhd:text-[14px] uhd:text-[18px] font-medium rounded-md border border-gray-200 transition-colors shadow-2xs min-h-[38px] flex items-center"
                 >
-                  LinkedIn
+                  Linkedin
                 </a>
                 <a
                   href="https://www.instagram.com/kyureeus.edtech?igsh=MTlsNjJ3NjBudnprcQ==&igsi=MTlsNjJ3NjBudnprcQ=="
@@ -88,7 +88,7 @@ export function Footer() {
 
             {/* Right Links Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 md:col-span-2 lg:col-span-7 w-full lg:justify-end qhd:gap-36 pt-2 lg:pt-0">
-              
+
               {/* Column 1: EXPLORE */}
               <div className="space-y-3 sm:space-y-4 qhd:space-y-6">
                 <h4 className="font-sans text-[12px] qhd:text-[15px] uhd:text-[19px] font-bold tracking-wider text-[#121212] uppercase">
